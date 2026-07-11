@@ -1,0 +1,385 @@
+/* ============================= */
+/* AI MODEL SECTION               */
+/* ============================= */
+
+.ai-section {
+  position: relative;
+  padding: 100px 20px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.ai-bg-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: -160px;
+  right: -140px;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.08);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ai-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* ---------- Left content ---------- */
+
+.ai-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #0d9488;
+  background: rgba(13, 148, 136, 0.08);
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-bottom: 22px;
+}
+
+.ai-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0d9488;
+}
+
+.ai-heading {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin: 0 0 18px 0;
+}
+
+.ai-heading span {
+  background: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ai-subtext {
+  font-size: 1.05rem;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 0 40px 0;
+}
+
+/* ---------- Q&A cards ---------- */
+
+.ai-qa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.ai-qa-card {
+  background: #f8f9fb;
+  border: 1px solid #eef1f6;
+  border-radius: 14px;
+  padding: 20px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.ai-qa-card:hover {
+  border-color: rgba(13, 148, 136, 0.25);
+  background: #ffffff;
+}
+
+.ai-qa-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.qa-user-badge {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #1a1a2e;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.ai-qa-question p {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.4;
+}
+
+.ai-qa-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e7ee;
+}
+
+.ai-avatar {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
+  color: #ffffff;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.ai-qa-answer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.ai-tag {
+  display: inline-block;
+  font-family: 'SF Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #0d9488;
+  background: rgba(13, 148, 136, 0.1);
+  border-radius: 5px;
+  padding: 2px 6px;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+/* ---------- Right visual ---------- */
+
+.ai-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-visual-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(13, 148, 136, 0.14);
+  aspect-ratio: 4 / 5;
+}
+
+.ai-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ai-floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #ffffff;
+  border: 1px solid #eef1f6;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 10px 24px rgba(26, 26, 46, 0.08);
+}
+
+/* Diagnostic accuracy badge — smaller, quieter */
+.badge-top {
+  top: 9%;
+  right: -4%;
+  padding: 8px 12px;
+  gap: 7px;
+}
+
+.badge-top .badge-text strong {
+  font-size: 0.9rem;
+}
+
+.badge-top .badge-text small {
+  font-size: 0.64rem;
+}
+
+.badge-top .badge-pulse {
+  width: 18px;
+  height: 18px;
+}
+
+.badge-top .pulse-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.badge-bottom {
+  bottom: 9%;
+  left: -6%;
+}
+
+.badge-pulse {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(13, 148, 136, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0d9488;
+  box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.55);
+  animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(13, 148, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+  }
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.badge-text strong {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.badge-text small {
+  font-size: 0.7rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* ============================= */
+/* RESPONSIVE                     */
+/* ============================= */
+
+@media (max-width: 1100px) {
+  .ai-container {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .ai-visual {
+    order: 2;
+  }
+
+  .ai-content {
+    order: 1;
+  }
+
+  .ai-visual-frame {
+    max-width: 380px;
+  }
+
+  .badge-top {
+    right: 3%;
+  }
+
+  .badge-bottom {
+    left: 3%;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-section {
+    padding: 70px 16px;
+  }
+
+  .ai-heading {
+    font-size: 2.1rem;
+  }
+
+  .ai-subtext {
+    font-size: 0.98rem;
+  }
+
+  .ai-qa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badge-top {
+    top: 6%;
+    right: 4%;
+  }
+
+  .badge-bottom {
+    bottom: 6%;
+    left: 4%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-heading {
+    font-size: 1.75rem;
+  }
+
+  .ai-visual-frame {
+    max-width: 100%;
+    aspect-ratio: 4 / 4.4;
+  }
+
+  .ai-floating-badge {
+    position: static;
+    margin-top: 12px;
+  }
+
+  .ai-visual {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot {
+    animation: none;
+  }
+}

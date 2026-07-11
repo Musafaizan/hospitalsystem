@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+.serve-section {
+  --deep: #04352a;
+  --deep-2: #06503f;
+  --mid: #0d9488;
+  --mint: #2dd4bf;
+  --paper: #ffffff;
+  --paper-line: #e7e1d2;
+  --ink: #12312a;
+
+  position: relative;
+  background: #ffffff;
+  padding: 100px 30px 110px;
+  overflow: visible;
+  font-family: 'Inter', sans-serif;
+}
+
+.serve-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+
+.serve-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 70px;
+}
+
+.serve-eyebrow {
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding: 6px 16px;
+  border: 1px solid rgba(13, 148, 136, 0.3);
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.serve-heading h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #10231d;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 0 0 16px;
+}
+
+.serve-heading h2 span {
+  color: var(--mid);
+}
+
+.serve-heading p {
+  color: #5b6b64;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  align-items: stretch;
+}
+
+/* ---------- Card (folder) ---------- */
+
+.serve-card {
+  position: relative;
+  background: var(--paper);
+  border-radius: 16px;
+  border: 1px solid var(--paper-line);
+  box-shadow: 0 20px 40px rgba(4, 53, 42, 0.08);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.serve-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 50px rgba(4, 53, 42, 0.14);
+}
+
+.serve-card.featured {
+  border: 2px solid var(--mid);
+  box-shadow: 0 25px 50px rgba(13, 148, 136, 0.18);
+}
+
+.serve-card.featured:hover {
+  box-shadow: 0 32px 60px rgba(13, 148, 136, 0.24);
+}
+
+/* folder tab sticking up above the card — original "Most Popular" style */
+.serve-tab {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 36px;
+  padding: 0 18px;
+  background: var(--deep);
+  border: 1.5px solid var(--mint);
+  color: var(--mint);
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* punch holes, like binder paper */
+.serve-punch {
+  position: absolute;
+  top: 20px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ddd7c5 60%, #c8c1ab 100%);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.serve-punch-1 {
+  left: 22px;
+}
+
+.serve-punch-2 {
+  left: 44px;
+}
+
+.serve-card-inner {
+  padding: 46px 32px 34px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.serve-card.featured .serve-card-inner {
+  padding-top: 52px;
+}
+
+.serve-card h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.serve-sub {
+  font-size: 0.92rem;
+  color: #5b6b64;
+  margin: 0 0 22px;
+}
+
+/* ---------- Pricing (new) ---------- */
+
+.serve-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.serve-price {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+}
+
+.featured .serve-price {
+  color: var(--mid);
+}
+
+.serve-period {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #7c8b84;
+}
+
+.serve-price-note {
+  font-size: 0.82rem;
+  color: #8a988f;
+  margin: 0 0 22px;
+}
+
+.serve-divider {
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--paper-line) 0,
+    var(--paper-line) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  margin-bottom: 22px;
+}
+
+.serve-features {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex: 1;
+}
+
+.serve-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.93rem;
+  color: #33453e;
+  line-height: 1.4;
+}
+
+.serve-check {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(13, 148, 136, 0.12);
+  color: var(--mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.featured .serve-check {
+  background: var(--mid);
+  color: #ffffff;
+}
+
+.serve-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--mid);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, gap 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.serve-cta:hover {
+  border-color: var(--mid);
+  gap: 12px;
+}
+
+.serve-cta:focus-visible {
+  outline: 2px solid var(--mid);
+  outline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+/* Straight to a single stacked column — keeps all three cards
+   perfectly consistent in width and height at every size. */
+
+@media (max-width: 900px) {
+  .serve-section {
+    padding: 75px 20px 90px;
+  }
+
+  .serve-heading {
+    margin-bottom: 50px;
+  }
+
+  .serve-heading h2 {
+    font-size: 2rem;
+  }
+
+  .serve-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .serve-card,
+  .serve-card.featured {
+    max-width: 480px;
+    margin: 18px auto 0;
+    width: 100%;
+  }
+
+  .serve-card-inner {
+    padding: 46px 26px 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .serve-heading h2 {
+    font-size: 1.6rem;
+  }
+
+  .serve-tab {
+    font-size: 0.68rem;
+    padding: 0 14px;
+    height: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serve-card,
+  .serve-cta {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,285 @@
+/* ============================= */
+/* LOGO MARQUEE SECTION          */
+/* ============================= */
+
+.logo-marquee-section {
+  padding: 70px 0 50px;
+  background: #f8f9fb;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-marquee-heading {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.logo-marquee-heading h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.logo-marquee-heading h2 span {
+  color: #0d9488;
+}
+
+.logo-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.logo-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  /* Fixed duration = fixed speed on every screen size, as requested */
+  animation: logoMarqueeScroll 16s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 55px;
+}
+
+.logo-marquee-item img {
+  height: 96px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Because the logo list is duplicated, translating exactly -50%
+   moves the track by one full set of logos, so the loop is seamless */
+@keyframes logoMarqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive: same speed (16s) everywhere per request, only spacing/size adapt */
+@media (max-width: 1024px) {
+  .logo-marquee-item {
+    padding: 0 40px;
+  }
+  .logo-marquee-item img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-marquee-section {
+    padding: 45px 0 35px;
+  }
+  .logo-marquee-heading h2 {
+    font-size: 1.85rem;
+  }
+  .logo-marquee-item {
+    padding: 0 28px;
+  }
+  .logo-marquee-item img {
+    height: 60px;
+  }
+}
+
+/* ============================= */
+/* TRUST / COUNTERS SECTION      */
+/* ============================= */
+
+.trust-section {
+  padding: 40px 20px 90px;
+  background: #f8f9fb;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(45, 212, 191, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(45, 212, 191, 0.03) 0%, transparent 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20, 30 30 T60 30' stroke='%23e0e5ec' fill='none' stroke-width='0.5'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.trust-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.trust-heading h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.trust-heading h2 span {
+  color: #0d9488;
+  position: relative;
+}
+
+.trust-heading h2 span::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0d9488, transparent);
+  border-radius: 2px;
+}
+
+.trust-heading p {
+  font-size: 1.05rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.trust-card {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid #eef1f6;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0d9488, #2dd4bf);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(45, 212, 191, 0.12);
+  border-color: transparent;
+}
+
+.trust-card:hover::before {
+  transform: scaleX(1);
+}
+
+.trust-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0d9488;
+  line-height: 1;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -2px;
+}
+
+.hash-symbol {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0d9488;
+}
+
+.counter-number {
+  display: inline-block;
+  background: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trust-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: 2px;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+.trust-description {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trust-heading h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .trust-section {
+    padding: 20px 15px 60px;
+  }
+  .trust-heading h2 {
+    font-size: 1.85rem;
+  }
+  .trust-number,
+  .hash-symbol {
+    font-size: 2.75rem;
+  }
+}
