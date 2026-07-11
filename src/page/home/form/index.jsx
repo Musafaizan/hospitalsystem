@@ -16,15 +16,49 @@ export default function RequestDemoSection() {
     requirement: "",
     phone: "",
   });
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // hook up your submit logic here
-    console.log("Demo request:", form);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/iammusa182@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          fullName: form.fullName,
+          setupName: form.setupName,
+          email: form.email,
+          phone: form.phone,
+          requirement: form.requirement,
+          _subject: `Demo request from ${form.fullName || "a new lead"}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({
+          fullName: "",
+          setupName: "",
+          email: "",
+          requirement: "",
+          phone: "",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission failed", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -45,6 +79,11 @@ export default function RequestDemoSection() {
           </p>
 
           <form className="demo-form" onSubmit={handleSubmit}>
+            {submitted && (
+              <div className="demo-success" role="status">
+                Thank you! Your request has been submitted. Our team will contact you shortly.
+              </div>
+            )}
             <div className="form-row">
               <div className="form-field">
                 <label htmlFor="fullName">
@@ -136,8 +175,8 @@ export default function RequestDemoSection() {
               </div>
             </div>
 
-            <button type="submit" className="demo-submit">
-              Submit
+            <button type="submit" className="demo-submit" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
