@@ -202,8 +202,8 @@ const Features = () => {
   return (
     <section className="features-section" id="features">
       <div className="features-container">
-        <div className="section-header">
-          <h2 className="section-title">Core Features</h2>
+         <div className="feature-heading">
+            <h2>core <span>Features</span></h2>
           <p className="section-descriptions">
             Comprehensive hospital management tools in one unified platform
           </p>

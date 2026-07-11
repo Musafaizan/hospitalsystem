@@ -127,6 +127,19 @@
   display: block;
 }
 
+.feature-heading h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.feature-heading h2 span {
+  color: #0d9488;
+  position: relative;
+}
+
 /* ================= DETAIL AREA (right) ================= */
 .features-detail-wrapper {
   padding: 2.2rem 2.2rem 2.6rem;

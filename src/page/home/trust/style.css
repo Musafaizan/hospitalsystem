@@ -156,7 +156,7 @@
   position: relative;
 }
 
-.trust-heading h2 span::after {
+/* .trust-heading h2 span::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -165,7 +165,7 @@
   height: 3px;
   background: linear-gradient(90deg, #0d9488, transparent);
   border-radius: 2px;
-}
+} */
 
 .trust-heading p {
   font-size: 1.05rem;
