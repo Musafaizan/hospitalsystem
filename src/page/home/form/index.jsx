@@ -1,183 +1,201 @@
 import React, { useState } from "react";
 import "./style.css";
-import doctorform from "../../../assets/doctor1-from.png";
 
-const REQUIREMENTS = [
-  "Hospital Management",
-  "Clinical Management",
-  "EHR / EMR",
+import demoImage from "../../../assets/doctor1-from.png";
+
+const VOLUME_OPTIONS = [
+  "Under 20 beds / <500 patients per month",
+  "20–75 beds / 500–3,000 patients per month",
+  "75–200 beds / 3,000–10,000 patients per month",
+  "200+ beds / 10,000+ patients per month",
 ];
+
+const RECEIVER_EMAIL = "iammusa182@gmail.com";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/iammusa182@gmail.com";
 
 export default function RequestDemoSection() {
   const [form, setForm] = useState({
-    fullName: "",
-    setupName: "",
+    name: "",
     email: "",
-    requirement: "",
-    phone: "",
+    org: "",
+    volume: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (field) => (e) => {
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+
+    const subject = `Demo Request from ${form.name || "New Lead"}`;
+    const body = [
+      `Full Name: ${form.name}`,
+      `Official Work Email: ${form.email}`,
+      `Hospital/Clinic Name: ${form.org}`,
+      `Number of Beds / Monthly Patient Volume: ${form.volume}`,
+      `Message / Core Challenges: ${form.message}`,
+    ].join("\n");
+
+    const payload = new URLSearchParams({
+      name: form.name,
+      email: form.email,
+      org: form.org,
+      volume: form.volume,
+      message: form.message,
+      _subject: subject,
+      _replyto: form.email,
+      _captcha: "false",
+    });
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/iammusa182@gmail.com", {
+      setIsSubmitting(true);
+      const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({
-          fullName: form.fullName,
-          setupName: form.setupName,
-          email: form.email,
-          phone: form.phone,
-          requirement: form.requirement,
-          _subject: `Demo request from ${form.fullName || "a new lead"}`,
-        }),
+        body: payload,
       });
 
-      if (response.ok) {
-        setSubmitted(true);
-        setForm({
-          fullName: "",
-          setupName: "",
-          email: "",
-          requirement: "",
-          phone: "",
-        });
+      if (!response.ok) {
+        throw new Error("Submission failed");
       }
+
+      setForm({
+        name: "",
+        email: "",
+        org: "",
+        volume: "",
+        message: "",
+      });
+      setSubmitted(true);
     } catch (error) {
-      console.error("Form submission failed", error);
+      const mailtoLink = `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+      setSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="demo" className="demo-section">
+    <section className="demo-section" id="demo">
       <div className="demo-container">
         <div className="demo-image">
-          <img src={doctorform} alt="Healthcare professional" />
+          <img src={demoImage} alt="MediCore platform preview" />
         </div>
 
         <div className="demo-form-wrap">
-          <span className="demo-eyebrow">Get Started</span>
+          <span className="demo-eyebrow">Book Your Walkthrough</span>
+
           <h2 className="demo-heading">
-            Request A <span>Demo</span>
+            Request a Personalized Demo <span>&amp; System Breakdown</span>
           </h2>
+
           <p className="demo-subtext">
-            Tell us a bit about your facility and we'll set up a personalized
-            walkthrough of the platform for your team.
+            Tell us about your facility and we'll tailor the walkthrough to
+            the modules that matter for your size and patient volume.
           </p>
 
           <form className="demo-form" onSubmit={handleSubmit}>
-            {submitted && (
-              <div className="demo-success" role="status">
-                Thank you! Your request has been submitted. Our team will contact you shortly.
-              </div>
-            )}
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="fullName">
+                <label htmlFor="demo-name">
                   Full Name<span className="req">*</span>
                 </label>
                 <input
-                  id="fullName"
-                  name="fullName"
+                  id="demo-name"
                   type="text"
-                  placeholder="e.g. Muhammad Ali"
-                  value={form.fullName}
-                  onChange={handleChange}
                   required
+                  placeholder="Dr. Sara Ahmed"
+                  value={form.name}
+                  onChange={handleChange("name")}
                 />
               </div>
 
               <div className="form-field">
-                <label htmlFor="setupName">
-                  Setup Name<span className="req">*</span>
+                <label htmlFor="demo-email">
+                  Official Work Email<span className="req">*</span>
                 </label>
                 <input
-                  id="setupName"
-                  name="setupName"
-                  type="text"
-                  placeholder="e.g. Healthwire"
-                  value={form.setupName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="form-row">
-              <div className="form-field">
-                <label htmlFor="email">
-                  Email<span className="req">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
+                  id="demo-email"
                   type="email"
-                  placeholder="e.g. ali@hospital.com"
-                  value={form.email}
-                  onChange={handleChange}
                   required
+                  placeholder="you@hospital.com"
+                  value={form.email}
+                  onChange={handleChange("email")}
                 />
-              </div>
-
-              <div className="form-field">
-                <label htmlFor="phone">
-                  Phone Number<span className="req">*</span>
-                </label>
-                <div className="phone-input">
-                  <span className="phone-code">+92</span>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="3XXXXXXXXX"
-                    value={form.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
               </div>
             </div>
 
             <div className="form-row">
-              <div className="form-field form-field--full">
-                <label htmlFor="requirement">
-                  Primary Requirement<span className="req">*</span>
+              <div className="form-field">
+                <label htmlFor="demo-org">
+                  Hospital/Clinic Name<span className="req">*</span>
+                </label>
+                <input
+                  id="demo-org"
+                  type="text"
+                  required
+                  placeholder="City Care Hospital"
+                  value={form.org}
+                  onChange={handleChange("org")}
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="demo-volume">
+                  Number of Beds / Monthly Patient Volume<span className="req">*</span>
                 </label>
                 <select
-                  id="requirement"
-                  name="requirement"
-                  value={form.requirement}
-                  onChange={handleChange}
+                  id="demo-volume"
                   required
+                  value={form.volume}
+                  onChange={handleChange("volume")}
                 >
                   <option value="" disabled>
-                    Select your requirement
+                    Select an option
                   </option>
-                  {REQUIREMENTS.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
+                  {VOLUME_OPTIONS.map((opt) => (
+                    <option value={opt} key={opt}>
+                      {opt}
                     </option>
                   ))}
                 </select>
               </div>
             </div>
 
+            <div className="form-row">
+              <div className="form-field form-field--full">
+                <label htmlFor="demo-message">Message / Core Challenges</label>
+                <textarea
+                  id="demo-message"
+                  rows={4}
+                  placeholder="Tell us what's slowing your team down today..."
+                  value={form.message}
+                  onChange={handleChange("message")}
+                />
+              </div>
+            </div>
+
             <button type="submit" className="demo-submit" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Submit"}
+              {isSubmitting
+                ? "Sending your request..."
+                : "Schedule My Live Architecture Preview"}
             </button>
+
+            {submitted && (
+              <p className="demo-success">
+                Thanks — a solutions architect will reach out within one
+                business day to schedule your live preview.
+              </p>
+            )}
           </form>
         </div>
       </div>

@@ -4,26 +4,26 @@ import './style.css';
 import aiImage from '../../../assets/ai-model.png';
 
 const AIModelSection = () => {
-  const qaCards = [
+  const features = [
     {
-      question: 'How many staff are rostered for the night shift?',
-      answer:
-        '14 staff members are scheduled for tonight — 3 short of the recommended headcount for the ICU and ER wings.',
+      title: 'Predictive Diagnostics & Risk Scoring',
+      copy:
+        "Analyze patient history instantly to flag high-risk anomalies, medication contradictions, and early critical care indicators.",
     },
     {
-      question: 'What is our current bed occupancy rate?',
-      answer:
-        '82% occupancy across all departments. General ward is at capacity; 6 beds remain free in the surgical unit.',
+      title: 'Automated Smart Medical Transcriptions',
+      copy:
+        "Doctors speak; our integrated AI documents. Convert voice-to-text directly into the patient's EMR/EHR file during consultations.",
     },
     {
-      question: 'Are there any pending insurance claims overdue?',
-      answer:
-        '23 claims are pending beyond 30 days, totaling $184,000 — flagged for the billing team to follow up.',
+      title: 'Dynamic Intelligent Bed & Resource Allocation',
+      copy:
+        'AI forecasts ER influxes and automatically optimizes ICU bed, surgery room, and staff schedules to prevent bottlenecks.',
     },
     {
-      question: 'Show inventory levels for critical medical supplies.',
-      answer:
-        'Surgical gloves and IV kits are below reorder threshold. Purchase requests have been auto-generated for approval.',
+      title: 'Smart Insurance Claims Predictive Analytics',
+      copy:
+        'Reduce claim rejections. The built-in AI audits ICD-10 medical coding instantly before submission to ensure higher approval rates.',
     },
   ];
 
@@ -39,28 +39,25 @@ const AIModelSection = () => {
           </span>
 
           <h2 className="ai-heading">
-            Ask <span>MedAI</span> Anything
+            Smart Healthcare: <span>AI-Driven</span> Clinical Intelligence
           </h2>
 
           <p className="ai-subtext">
-            Our built-in management AI reads across staffing, billing, inventory
-            and occupancy data in real time so your administrators get instant,
-            accurate answers instead of digging through spreadsheets.
+            Our built-in clinical AI reads across patient history, documentation,
+            capacity and claims data in real time so your care teams get instant,
+            accurate insight instead of digging through charts.
           </p>
 
           <div className="ai-qa-grid">
-            {qaCards.map((card, index) => (
+            {features.map((feature, index) => (
               <div className="ai-qa-card" key={index}>
                 <div className="ai-qa-question">
-                  <span className="qa-user-badge">Q</span>
-                  <p>{card.question}</p>
+                  <span className="qa-user-badge">{String(index + 1).padStart(2, '0')}</span>
+                  <p>{feature.title}</p>
                 </div>
                 <div className="ai-qa-answer">
                   <span className="ai-avatar">✦</span>
-                  <p>
-                    <span className="ai-tag">MedAI</span>
-                    {card.answer}
-                  </p>
+                  <p>{feature.copy}</p>
                 </div>
               </div>
             ))}
@@ -69,7 +66,7 @@ const AIModelSection = () => {
 
         <div className="ai-visual">
           <div className="ai-visual-frame">
-            <img src={aiImage} alt="MedAI management assistant interface" />
+            <img src={aiImage} alt="MedAI clinical intelligence interface" />
           </div>
 
           <div className="ai-floating-badge badge-top">

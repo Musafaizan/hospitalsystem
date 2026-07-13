@@ -27,47 +27,45 @@ const ArrowIcon = () => (
 
 const providers = [
   {
-    title: 'Hospitals',
-    subtitle: 'Multi-department, multi-location.',
-    price: 'Custom',
-    priceNote: 'Scoped to departments & beds',
+    segment: 'Clinic / Specialized Center',
+    title: 'Growth Stack',
+    subtitle: 'Perfect for single-facility centers needing unified clinical workflows.',
     features: [
-      'IPD, OPD, OT, Emergency',
-      'Lab, Radiology & Pharmacy',
-      'Insurance & TPA workflows',
-      'HR, payroll & finance',
+      'Core EHR/EMR',
+      'Patient Registry',
+      'Prescriptions',
+      'Lab Orders',
+      'Basic Billing',
     ],
-    cta: 'Get started',
+    cta: 'Start Small Today',
     featured: false,
   },
   {
-    title: 'Clinics',
-    subtitle: 'Single & multi-specialty.',
-    price: '$149',
-    period: '/ month',
-    priceNote: 'Per location, billed annually',
+    segment: 'Multispecialty Hospital',
+    title: 'Enterprise Health',
+    subtitle: 'Fully scalable architecture for large hospitals with high patient turnover.',
     features: [
-      'Appointments & tele-consult',
-      'OPD queue & prescriptions',
-      'Patient recalls & CRM',
-      'Package & membership billing',
+      'Everything in Growth Stack',
+      'Secure Patient Portal',
+      'Full Accounting',
+      'Insurance Claim Module',
+      'Surgery Tracker',
+      'Advanced Inventory',
     ],
-    cta: 'Get started',
+    cta: 'Go Enterprise',
     featured: true,
   },
   {
-    title: 'Private Practitioners',
-    subtitle: 'Specialists & solo doctors.',
-    price: '$49',
-    period: '/ month',
-    priceNote: 'For a single provider',
+    segment: 'Custom / Healthcare Network',
+    title: 'Custom Ecosystem',
+    subtitle: 'For multi-branch hospital networks requiring localized server hosting and AI modeling.',
     features: [
-      'Beautiful EHR templates',
-      'e-Prescribing & lab orders',
-      'Mobile-first patient app',
-      'Automated follow-ups',
+      'Dedicated Cloud/On-Premise deployment',
+      'Full AI Agent Integration',
+      'Custom APIs for Hardware',
+      '24/7 Dedicated SLA Support',
     ],
-    cta: 'Get Started',
+    cta: 'Contact Our Architect',
     featured: false,
   },
 ];
@@ -81,26 +79,21 @@ const WhoWeServeSection = () => {
           <h2>
             Built for every kind of <span>care provider</span>
           </h2>
-          <p>One system, indexed for how your team actually works — pick the plan that fits.</p>
+          <p>One system, indexed for how your team actually works — pick the tier that fits.</p>
         </div>
 
         <div className="serve-grid">
           {providers.map((p, index) => (
             <div className={`serve-card ${p.featured ? 'featured' : ''}`} key={index}>
-              {p.featured && <div className="serve-tab">★ Most Popular</div>}
+              {p.featured && <div className="serve-tab">★ Recommended</div>}
 
               <div className="serve-punch serve-punch-1"></div>
               <div className="serve-punch serve-punch-2"></div>
 
               <div className="serve-card-inner">
+                <span className="serve-segment">{p.segment}</span>
                 <h3>{p.title}</h3>
                 <p className="serve-sub">{p.subtitle}</p>
-
-                <div className="serve-price-row">
-                  <span className="serve-price">{p.price}</span>
-                  {p.period && <span className="serve-period">{p.period}</span>}
-                </div>
-                <p className="serve-price-note">{p.priceNote}</p>
 
                 <div className="serve-divider"></div>
 

@@ -140,7 +140,8 @@
 }
 
 .form-field input,
-.form-field select {
+.form-field select,
+.form-field textarea {
   border: none;
   outline: none;
   font-size: 0.98rem;
@@ -149,6 +150,12 @@
   font-family: inherit;
   padding: 0;
   width: 100%;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 84px;
+  line-height: 1.5;
 }
 
 .form-field select {
@@ -160,7 +167,8 @@
   cursor: pointer;
 }
 
-.form-field input::placeholder {
+.form-field input::placeholder,
+.form-field textarea::placeholder {
   color: #a3a9b4;
 }
 

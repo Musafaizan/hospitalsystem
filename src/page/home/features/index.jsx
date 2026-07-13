@@ -6,170 +6,78 @@ import './style.css';
 import img1 from '../../../assets/patient.png';
 import img2 from '../../../assets/appoinment.png';
 import img3 from '../../../assets/clinicalnotes.png';
-// import img4 from '../../assets/encounter.png';
 import img5 from '../../../assets/laborder.png';
-import img6 from '../../../assets/pescription.png';  
+import img6 from '../../../assets/pescription.png';
 import img7 from '../../../assets/vital.png';
 
 
 const featuresData = [
   {
     id: 1,
-    title: 'Patient Registration & History (The Entry Point)',
-    headline: 'One Patient, One Record',
+    title: 'Centralized EHR/EMR & Patient Registry',
+    headline: 'One Record, Every Visit',
     icon: 'FileText',
     image: img1,
-    description: 'Centralized patient data management with secure, CBAHI-compliant archiving.',
+    description: 'Digital onboarding from day one. Maintain a single, immutable timeline of patient histories, demographics, and vitals.',
     capabilities: [
-      'Centralized Data: Demographics, history, and documents in one view',
-      'Universal Search: Find patient records instantly across any department',
-      'Secure Archiving: CBAHI-compliant history tracking and storage'
+      'Digital Onboarding: Paperless registration from day one',
+      'Unified Timeline: Immutable history of demographics and vitals',
+      'Instant Retrieval: Single record accessible across every department'
     ]
   },
   {
     id: 2,
-    title: 'Appointments & Encounters (The Interaction)',
-    headline: 'Seamless Patient Flow',
-    icon: 'Calendar',
+    title: 'Secure Patient Portal',
+    headline: 'Care, Accessible Anytime',
+    icon: 'Globe',
     image: img2,
-    description: 'Smart scheduling with real-time queue management and encounter tracking.',
+    description: 'Empower patients to view laboratory reports, download prescriptions, check active diagnoses, and manage appointments securely online.',
     capabilities: [
-      'Smart Scheduling: Drag-and-drop booking with conflict detection',
-      'Queue Management: Real-time tracking of patient status (Waiting, In-Consult)',
-      'Encounter History: Complete timeline of all previous visits'
+      'Lab Reports: View results online, no waiting on phone calls',
+      'Prescriptions: Download and manage prescriptions anytime',
+      'Appointments: Book, reschedule, and track visits securely'
     ]
   },
   {
     id: 3,
-    title: 'Vital Signs & Triage (The Assessment)',
-    headline: 'Rapid Clinical Assessment',
-    icon: 'HeartPulse',
-    image: img7,
-    description: 'Quick capture of vitals with smart alerts and trending visualization.',
+    title: 'Lab Order, Prescriptions & Medicine Inventory',
+    headline: 'Prescribe, Fulfill, Track',
+    icon: 'Pill',
+    image: img6,
+    description: 'Electronic prescribing (e-Rx) connects doctors directly to the in-house pharmacy and laboratory networks for rapid fulfillment.',
     capabilities: [
-      'Auto-calculated scores: NEWS, MEWS, qSOFA',
-      'Abnormal value highlighting & alerts',
-      'Historical trending graphs'
+      'e-Prescribing: Direct link from doctor to in-house pharmacy',
+      'Lab Integration: Orders routed straight to diagnostic networks',
+      'Rapid Fulfillment: Real-time inventory and dispensing sync'
     ]
   },
   {
     id: 4,
-    title: 'Clinical Notes & Diagnosis (The Consultation)',
-    headline: 'Intelligent Documentation',
-    icon: 'FileSignature',
-    image: img3,
-    description: 'Structured, searchable clinical notes with smart templates.',
+    title: 'Advanced Surgery & Ward Management',
+    headline: 'Every Bed, Every Theater',
+    icon: 'Scissors',
+    image: img7,
+    description: 'Comprehensive scheduling and logging for operating theaters, pre-op, and post-op tracking without paper trail delays.',
     capabilities: [
-      'SOAP & Progress Notes with auto-fill',
-      'ICD-10 / SNOMED CT diagnosis coding',
-      'Attachment support (photos, PDFs, scans)'
+      'OT Scheduling: Conflict-free booking for operating theaters',
+      'Pre-Op Tracking: Structured checklists before every procedure',
+      'Post-Op Logging: Paperless recovery and ward monitoring'
     ]
   },
   {
     id: 5,
-    title: 'Lab, Imaging & Diagnostic Orders (The Investigation)',
-    headline: 'Integrated Order & Results',
-    icon: 'TestTube',
-    image: img5,
-    description: 'Seamless ordering with automatic result integration and tracking.',
+    title: 'Full-Scale Healthcare Accounting & Insurance',
+    headline: 'Billing Without Blind Spots',
+    icon: 'Receipt',
+    image: img3,
+    description: 'Automated corporate invoicing, co-pay tracking, automated rebates, and deep financial auditing tailored for complex hospital setups.',
     capabilities: [
-      'Order from consultation screen',
-      'Auto-sync lab/imaging results',
-      'Real-time status updates'
+      'Corporate Invoicing: Automated billing for institutional clients',
+      'Co-Pay Tracking: Real-time deductible and rebate calculation',
+      'Financial Auditing: Deep reporting built for complex hospital setups'
     ]
-  },
-  {
-    id: 6,
-    title: 'Prescriptions & Procedures (The Treatment)',
-    headline: 'Safe & Digital Prescribing',
-    icon: 'Pill',
-    image: img6,
-    description: 'Electronic prescriptions with drug interaction checking and templates.',
-    capabilities: [
-      'e-Prescribing to in-house/outside pharmacy',
-      'Drug-allergy & interaction alerts',
-      'Procedure templates & documentation'
-    ]
-  },
-//   {
-//     id: 7,
-//     title: 'Billing & Payments (The Transaction)',
-//     headline: 'Automated & Compliant Billing',
-//     icon: 'Receipt',
-//     image: img2,
-//     description: 'ZATCA-compliant e-invoicing with unified multi-department billing.',
-//     capabilities: [
-//       'Automatic charge aggregation',
-//       'ZATCA QR code generation',
-//       'Multiple payment methods support'
-//     ]
-//   },
-//   {
-//     id: 8,
-//     title: 'Doctor Commission & Revenue (The Incentive)',
-//     headline: 'Transparent Earnings Tracking',
-//     icon: 'DollarSign',
-//     image: img1,
-//     description: 'Automated commission calculation with real-time doctor dashboards.',
-//     capabilities: [
-//       'Rule-based commission structure',
-//       'Instant commission on paid invoices',
-//       'Doctor performance & earnings reports'
-//     ]
-//   },
-//   {
-//     id: 9,
-//     title: 'Inventory & Pharmacy (The Fulfillment)',
-//     headline: 'Smart Stock Management',
-//     icon: 'Package',
-//     image: img5,
-//     description: 'Real-time inventory with expiry tracking and auto-reorder.',
-//     capabilities: [
-//       'Automatic stock deduction on dispense',
-//       'Near-expiry & low-stock alerts',
-//       'Purchase order generation'
-//     ]
-//   },
-//   {
-//     id: 10,
-//     title: 'Insurance Policies & Claims (The Reimbursement)',
-//     headline: 'NPHIES-Ready Insurance Handling',
-//     icon: 'Shield',
-//     image: img2,
-//     description: 'Real-time eligibility checks and automated claims processing.',
-//     capabilities: [
-//       'Instant NPHIES eligibility verification',
-//       'Automated claim scrubbing',
-//       'Co-pay & deductible auto-application'
-//     ]
-//   },
-//   {
-//     id: 11,
-//     title: 'Staff Management (Doctors, Nurses, Admin, Support Staff)',
-//     headline: 'Unified Workforce Control',
-//     icon: 'Users',
-//     image: img4,
-//     description: 'Role-based access, rostering, and performance tracking for all staff.',
-//     capabilities: [
-//       'Granular role-based permissions',
-//       'Automated shift scheduling',
-//       'Attendance & payroll integration'
-//     ]
-//   },
-//   {
-//     id: 12,
-//     title: 'Audit Logs & Compliance (The Governance)',
-//     headline: 'Accreditation-Ready Traceability',
-//     icon: 'FileCheck',
-//     image: img3,
-//     description: 'Complete audit trail with strong encryption and access logging.',
-//     capabilities: [
-//       'Timestamped action logging',
-//       'User activity monitoring',
-//       'HIPAA / CBAHI compliant protocols'
-//     ]
-//   }
- ];
+  }
+];
 
 const Features = () => {
   const [selectedFeature, setSelectedFeature] = useState(featuresData[0]);
@@ -203,7 +111,7 @@ const Features = () => {
     <section className="features-section" id="features">
       <div className="features-container">
          <div className="feature-heading">
-            <h2>core <span>Features</span></h2>
+            <h2>End-to-End Clinical & <span>Administrative Control</span></h2>
           <p className="section-descriptions">
             Comprehensive hospital management tools in one unified platform
           </p>

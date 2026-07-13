@@ -1,180 +1,301 @@
-.cta-section {
+/* ============================================
+   MediCore — CTA Section 2 (Centered / Pulse)
+   ============================================ */
+
+.cta2 {
+  width: 100%;
+  background-color: #031322;
+  padding: 56px 48px 48px;
+  box-sizing: border-box;
   position: relative;
-  background: linear-gradient(120deg, #05966d 0%, #0d9488 45%, #0a7a68 100%);
-  padding: 55px 40px;
   overflow: hidden;
-  isolation: isolate;
 }
 
-/* soft glowing orbs for depth */
-.cta-decor {
+/* subtle background glow, centered top */
+.cta2::before {
+  content: "";
   position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 236, 208, 0.07), transparent 70%);
+  top: -320px;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 50%;
-  filter: blur(60px);
-  z-index: 0;
   pointer-events: none;
 }
 
-.cta-decor-1 {
-  width: 260px;
-  height: 260px;
-  background: rgba(255, 255, 255, 0.14);
-  top: -120px;
-  left: 8%;
-}
-
-.cta-decor-2 {
-  width: 320px;
-  height: 320px;
-  background: rgba(45, 212, 191, 0.35);
-  bottom: -160px;
-  right: 6%;
-}
-
-/* faint dotted texture overlay */
-.cta-pattern {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
-  background-size: 26px 26px;
-  opacity: 0.35;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.cta-container {
-  position: relative;
-  z-index: 1;
-  max-width: 1300px;
+/* ── Layout ── */
+.cta2__inner {
+  max-width: 720px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.cta-text {
-  display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-.cta-subtitle {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0;
-  letter-spacing: 0.2px;
-}
-
-.cta-title {
-  color: #ffffff;
-  font-size: 2.1rem;
-  font-weight: 800;
-  margin: 0;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-}
-
-.cta-button {
+  align-items: center;
+  text-align: center;
   position: relative;
+  z-index: 1;
+}
+
+/* ── Badge ── */
+.cta2__badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: #ffffff;
-  color: #0a7a68;
-  font-size: 0.95rem;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-decoration: none;
-  padding: 18px 34px;
-  border-radius: 12px;
-  white-space: nowrap;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  overflow: hidden;
+  color: #00ecd0;
+  background: rgba(0, 236, 208, 0.08);
+  border: 1px solid rgba(0, 236, 208, 0.15);
+  padding: 7px 16px 7px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
 }
 
-/* shimmering sweep across the button */
-.cta-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(13, 148, 136, 0.18) 50%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  animation: ctaShimmer 3.2s ease-in-out infinite;
+.cta2__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ecd0;
+  box-shadow: 0 0 0 0 rgba(0, 236, 208, 0.6);
+  animation: cta2-ping 1.8s ease-out infinite;
 }
 
-@keyframes ctaShimmer {
+@keyframes cta2-ping {
   0% {
-    left: -75%;
+    box-shadow: 0 0 0 0 rgba(0, 236, 208, 0.55);
   }
-  55%,
+  70% {
+    box-shadow: 0 0 0 7px rgba(0, 236, 208, 0);
+  }
   100% {
-    left: 130%;
+    box-shadow: 0 0 0 0 rgba(0, 236, 208, 0);
   }
 }
 
-.cta-arrow {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.35s ease;
+/* ── Title ── */
+.cta2__title {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 18px;
+  max-width: 600px;
 }
 
-.cta-button span {
-  position: relative;
-  z-index: 1;
+.cta2__title span {
+  background: linear-gradient(135deg, #00ecd0, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-  color: #076354;
+.cta2__desc {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 26px;
+  max-width: 460px;
 }
 
-.cta-button:hover .cta-arrow {
+/* ── Buttons ── */
+.cta2__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.cta2__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #021a16;
+  background: #00ecd0;
+  padding: 14px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 236, 208, 0.2);
+}
+
+.cta2__btn-primary:hover {
+  background: #00dfc4;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 236, 208, 0.3);
+}
+
+.cta2__btn-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.cta2__btn-primary:hover svg {
   transform: translateX(4px);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .cta-container {
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-  }
+.cta2__btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
 
-  .cta-title {
-    font-size: 1.75rem;
+.cta2__btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── Signature: ECG pulse divider ── */
+.cta2__pulse {
+  width: 100%;
+  max-width: 600px;
+  height: 30px;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+.cta2__pulse-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cta2__pulse-line {
+  stroke: #00ecd0;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: cta2-draw 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(0, 236, 208, 0.5));
+}
+
+@keyframes cta2-draw {
+  0% {
+    stroke-dashoffset: 900;
+  }
+  55% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -900;
   }
 }
 
-@media (max-width: 600px) {
-  .cta-section {
-    padding: 45px 22px;
+/* ── Stats strip ── */
+.cta2__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 18px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+.cta2__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cta2__stat-value {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.cta2__stat-label {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cta2__stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 640px) {
+  .cta2 {
+    padding: 48px 24px 40px;
   }
 
-  .cta-title {
-    font-size: 1.45rem;
+  .cta2__title {
+    font-size: 30px;
   }
 
-  .cta-subtitle {
-    font-size: 0.9rem;
+  .cta2__desc {
+    font-size: 15px;
   }
 
-  .cta-button {
+  .cta2__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta2__btn-primary,
+  .cta2__btn-secondary {
     width: 100%;
     justify-content: center;
-    padding: 16px 26px;
+  }
+
+  .cta2__stats {
+    gap: 16px;
+    padding: 20px 16px;
+    width: 100%;
+  }
+
+  .cta2__stat-value {
+    font-size: 19px;
+  }
+
+  .cta2__stat-label {
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta2__badge-dot,
+  .cta2__pulse-line {
+    animation: none;
+  }
+
+  .cta2__pulse-line {
+    stroke-dashoffset: 0;
   }
 }

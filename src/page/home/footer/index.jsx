@@ -36,8 +36,7 @@ export default function Footer() {
             </span>
           </div>
           <p className="brand-desc">
-            The unified healthcare platform for hospitals, clinics and private
-            practitioners.
+            Engineering the future of business and clinical automation. 
           </p>
         </div>
 

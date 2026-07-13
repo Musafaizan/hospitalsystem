@@ -2,34 +2,33 @@ import { useState, useRef, useEffect } from "react";
 import "./style.css";
 const faqData = [
   {
-    question: "What is MediCore and how does it work?",
+    question: "How secure is patient medical data on this platform?",
     answer:
-      "MediCore is an all-in-one healthcare management platform designed for hospitals, clinics, and private practitioners. It streamlines patient management, appointment scheduling, billing, and medical records into a single, intuitive dashboard — helping you focus on what matters most: patient care.",
+      "Security is paramount. The system utilizes military-grade AES-256 encryption for data at rest and TLS 1.3 for data in transit. We are fully compliant with global data protection architectures (HIPAA/GDPR) ensuring your hospital stays completely liability-free.",
   },
   {
-    question: "Is my patient data secure with MediCore?",
+    question:
+      "Can the platform integrate with our existing laboratory hardware and imaging machines?",
     answer:
-      "Absolutely. MediCore uses bank-grade AES-256 encryption for all data at rest and in transit. We are fully HIPAA-compliant and undergo regular third-party security audits. Role-based access controls ensure only authorized personnel can view sensitive information.",
+      "Yes. Our HIS features an advanced API layer that seamlessly connects with standard medical imaging equipment, HL7-compliant laboratory analyzers, and DICOM formats for radiology.",
   },
   {
-    question: "Can I integrate MediCore with my existing systems?",
+    question:
+      "Is there a limit to the number of doctors, staff, or patients the system can handle?",
     answer:
-      "Yes! MediCore offers robust API integrations and supports HL7 FHIR standards. It seamlessly connects with popular EHR/EMR systems, laboratory information systems, pharmacy management tools, and billing platforms. Our onboarding team will guide you through every step.",
+      "No. The underlying architecture is built to auto-scale on secure servers, comfortably supporting massive traffic influxes, hundreds of concurrent medical personnel, and millions of patient medical profiles.",
   },
   {
-    question: "How long does it take to set up MediCore?",
+    question:
+      "How long does a complete data migration from our legacy software take?",
     answer:
-      "Most clinics and private practices are fully onboarded within 48 hours. For larger hospital deployments, our dedicated implementation team typically completes setup in 1–2 weeks, including data migration, staff training, and workflow customization.",
+      "Depending on your legacy system's structural complexity, our dedicated implementation team safely migrates your history records, registry entries, and financial ledgers within 2 to 4 weeks with zero active operational downtime.",
   },
   {
-    question: "What kind of support does MediCore offer?",
+    question:
+      "Does the platform support localized billing, tax structures, and country-specific insurance networks?",
     answer:
-      "We provide 24/7 priority support via live chat, email, and phone. Every customer is assigned a dedicated account manager. We also offer an extensive knowledge base, video tutorials, and regular webinars to help your team get the most out of MediCore.",
-  },
-  {
-    question: "Is there a free trial available?",
-    answer:
-      "Yes — we offer a 14-day free trial with full access to all features, no credit card required. You can explore the platform, import sample data, and see exactly how MediCore fits your workflow before committing to a plan.",
+      "Absolutely. The system houses an incredibly diversified financial module allowing you to configure multi-currency invoicing, localized country tax structures, and automated insurance billing flows tailored precisely to your region.",
   },
 ];
 function AccordionItem({ item, index, isOpen, onToggle }) {

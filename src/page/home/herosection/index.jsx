@@ -141,13 +141,13 @@ export default function HospitalHero({
         <div className="hh-content">
           <p className="hh-eyebrow hh-reveal" style={{ "--d": "0ms" }}>
             <span className="hh-eyebrow-dot" />
-            Hospital Management System
+            Hospital Information System
           </p>
 
           <h1 className="hh-headline hh-reveal" style={{ "--d": "120ms" }}>
-            Smarter hospital operations, built for{" "}
+            The Unified Enterprise Hospital Information System (HIS) for{" "}
             <span className="hh-highlight">
-              speed, clarity, and care
+              Modern Healthcare
               <svg
                 className="hh-underline"
                 viewBox="0 0 320 14"
@@ -161,9 +161,9 @@ export default function HospitalHero({
           </h1>
 
           <p className="hh-subtext hh-reveal" style={{ "--d": "240ms" }}>
-            Centralize patient records, appointments, billing, pharmacy, lab
-            reports, and department workflows in one secure digital platform
-            designed for modern healthcare teams.
+            Streamline clinical workflows, automate billing, and elevate
+            patient care with a secure, AI-powered EHR/EMR platform. Built for
+            hospitals that demand absolute efficiency.
           </p>
 
           <p className="hh-trust-line hh-reveal" style={{ "--d": "340ms" }}>
@@ -173,15 +173,15 @@ export default function HospitalHero({
 
           <div className="hh-actions hh-reveal" style={{ "--d": "440ms" }}>
             <a className="hh-btn hh-btn-primary" href={demoHref}>
-              <span>Request a Demo</span>
+              <span>Book a Live Demo</span>
               <Icon.Arrow className="hh-btn-icon" />
             </a>
             <a className="hh-btn hh-btn-secondary" href={modulesHref}>
-              Explore Modules
+              View System Architecture
             </a>
           </div>
 
-          <ul className="hh-stats hh-reveal" style={{ "--d": "540ms" }}>
+          {/* <ul className="hh-stats hh-reveal" style={{ "--d": "540ms" }}>
             {STATS.map(({ icon: StatIcon, value, label }) => (
               <li className="hh-stat" key={label}>
                 <span className="hh-stat-icon-wrap">
@@ -193,7 +193,7 @@ export default function HospitalHero({
                 </span>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
 
         <div className="hh-visual hh-reveal-right" style={{ "--d": "160ms" }}>

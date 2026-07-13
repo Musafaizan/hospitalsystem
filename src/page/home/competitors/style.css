@@ -1,27 +1,45 @@
+/* ============================================
+   HIS Comparison — Feature Matrix
+   ============================================ */
 
 .hms-compare-section {
-  padding: 56px 20px;
+  padding: 64px 20px 72px;
   background: #ffffff;
   background-image: radial-gradient(
       circle at 15% 20%,
-      rgba(45, 212, 191, 0.05) 0%,
+      rgba(45, 212, 191, 0.06) 0%,
       transparent 45%
     ),
-    radial-gradient(circle at 85% 80%, rgba(13, 148, 136, 0.05) 0%, transparent 45%);
+    radial-gradient(circle at 85% 80%, rgba(13, 148, 136, 0.06) 0%, transparent 45%);
 }
 
+/* ── Heading ── */
 .hms-compare-heading {
   text-align: center;
   max-width: 560px;
-  margin: 0 auto 32px;
+  margin: 0 auto 36px;
+}
+
+.hms-compare-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0d9488;
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.18);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
 }
 
 .hms-compare-heading h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.1rem;
+  font-weight: 800;
   color: #1a1a2e;
-  letter-spacing: -0.5px;
-  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
 }
 
 .hms-compare-heading h2 span {
@@ -29,38 +47,43 @@
 }
 
 .hms-compare-heading p {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
   color: #6b7280;
   margin: 0;
 }
 
+/* ── Table shell ── */
 .hms-compare-wrapper {
-  max-width: 840px;
+  max-width: 900px;
   margin: 0 auto;
   overflow-x: auto;
-  border-radius: 16px;
+  border-radius: 18px;
   background: #ffffff;
   border: 1px solid #eef1f6;
-  box-shadow: 0 12px 30px rgba(26, 26, 46, 0.05);
+  box-shadow: 0 16px 40px rgba(26, 26, 46, 0.06);
   -webkit-overflow-scrolling: touch;
 }
 
 .hms-compare-table {
   width: 100%;
-  border-collapse: collapse;
-  min-width: 560px;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 640px;
   font-size: 0.9rem;
 }
 
+/* ── Header row ── */
 .hms-compare-table thead th {
-  padding: 16px 14px;
+  padding: 20px 16px 18px;
   text-align: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: #1a1a2e;
   background: #f8f9fb;
   border-bottom: 2px solid #eef1f6;
   white-space: nowrap;
+  position: relative;
 }
 
 .hms-compare-table thead th.row-label-col {
@@ -68,7 +91,7 @@
   color: #6b7280;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 1px;
 }
 
@@ -76,72 +99,224 @@
   color: #ffffff;
   background: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
   border-bottom-color: transparent;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  padding-top: 30px;
 }
 
+.best-badge {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0d9488;
+  background: #ffffff;
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(13, 148, 136, 0.25);
+}
+
+/* ── Body rows ── */
 .hms-compare-table tbody tr {
   transition: background 0.2s ease;
 }
 
-.hms-compare-table tbody tr:hover {
+.hms-compare-table tbody tr:nth-child(even) td:not(.col-highlight) {
   background: #fafbfd;
+}
+
+.hms-compare-table tbody tr:hover td:not(.col-highlight) {
+  background: #f2f6f8;
 }
 
 .hms-compare-table tbody tr:not(:last-child) td {
   border-bottom: 1px solid #f0f2f6;
 }
 
+.hms-compare-table tbody tr:last-child td.col-highlight {
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
 .hms-compare-table td {
-  padding: 13px 14px;
+  padding: 14px 16px;
   text-align: center;
+  vertical-align: middle;
 }
 
 .hms-compare-table td.row-label {
   text-align: left;
   color: #1a1a2e;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.87rem;
 }
 
 .hms-compare-table td.col-highlight {
-  background: rgba(45, 212, 191, 0.06);
+  background: rgba(45, 212, 191, 0.07);
+  border-left: 1px solid rgba(13, 148, 136, 0.14);
+  border-right: 1px solid rgba(13, 148, 136, 0.14);
 }
 
+/* ── Marks / badges ── */
 .mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.mark svg {
+  flex-shrink: 0;
 }
 
 .mark--yes {
   background: rgba(13, 148, 136, 0.12);
   color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.22);
+}
+
+.mark--partial {
+  background: rgba(217, 119, 6, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(217, 119, 6, 0.2);
 }
 
 .mark--no {
-  background: rgba(107, 114, 128, 0.1);
-  color: #a3a9b4;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(107, 114, 128, 0.08);
+  color: #b3b8c2;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .hms-compare-section {
-    padding: 40px 14px;
+.mark-text {
+  white-space: nowrap;
+}
+
+/* ============================================
+   Tablet: allow horizontal scroll, tighten up
+   ============================================ */
+@media (max-width: 900px) {
+  .hms-compare-table {
+    min-width: 600px;
   }
+}
+
+/* ============================================
+   Mobile: table -> stacked feature cards
+   ============================================ */
+@media (max-width: 680px) {
+  .hms-compare-section {
+    padding: 48px 14px 56px;
+  }
+
   .hms-compare-heading h2 {
     font-size: 1.6rem;
   }
+
+  .hms-compare-wrapper {
+    overflow-x: visible;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+  }
+
   .hms-compare-table {
-    min-width: 480px;
-    font-size: 0.82rem;
+    min-width: 0;
+    width: 100%;
+    display: block;
+    font-size: 0.85rem;
   }
-  .hms-compare-table thead th,
+
+  .hms-compare-table thead {
+    display: none;
+  }
+
+  .hms-compare-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hms-compare-table tbody tr {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #eef1f6;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(26, 26, 46, 0.05);
+    overflow: hidden;
+  }
+
+  .hms-compare-table tbody tr:not(:last-child) td {
+    border-bottom: none;
+  }
+
+  .hms-compare-table td.row-label {
+    display: block;
+    padding: 14px 16px 10px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    border-bottom: 1px solid #f0f2f6;
+    background: #f8f9fb;
+  }
+
   .hms-compare-table td {
-    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 16px;
+    text-align: left;
+    border-bottom: 1px solid #f5f6f9;
+    background: transparent !important;
   }
+
+  .hms-compare-table td:last-child {
+    border-bottom: none;
+  }
+
+  .hms-compare-table td.col-highlight {
+    border-left: none;
+    border-right: none;
+  }
+
+  .hms-compare-table td[data-label]::before {
+    content: attr(data-label);
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #6b7280;
+    flex-shrink: 0;
+  }
+
+  .hms-compare-table td.col-highlight[data-label]::before {
+    color: #0d9488;
+  }
+
   .mark {
-    width: 20px;
-    height: 20px;
+    max-width: 190px;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .mark-text {
+    white-space: normal;
+  }
+
+  .best-badge {
+    display: none;
   }
 }
