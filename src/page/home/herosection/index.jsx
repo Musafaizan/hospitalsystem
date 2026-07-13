@@ -65,12 +65,6 @@ const Icon = {
   ),
 };
 
-const STATS = [
-  { icon: Icon.Clock, value: "24/7", label: "System access" },
-  { icon: Icon.Shield, value: "100%", label: "Secure data" },
-  { icon: Icon.Bolt, value: "40%", label: "Faster operations" },
-];
-
 const CHIPS = [
   { label: "Patient Records", sub: "Updated live", pos: "chip-one" },
   { label: "Pharmacy", sub: "Stock synced", pos: "chip-two" },

@@ -6,7 +6,6 @@ import './style.css';
 import img1 from '../../../assets/patient.png';
 import img2 from '../../../assets/appoinment.png';
 import img3 from '../../../assets/clinicalnotes.png';
-import img5 from '../../../assets/laborder.png';
 import img6 from '../../../assets/pescription.png';
 import img7 from '../../../assets/vital.png';
 
