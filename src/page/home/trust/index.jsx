@@ -6,7 +6,7 @@ import logo2 from '../../../assets/logo2.png';
 import logo3 from '../../../assets/logo3.png';
 import logo4 from '../../../assets/logo4.png';
 import logo5 from '../../../assets/logo5.png';
-import logo6 from '../../../assets/logo6.png';
+// import logo6 from '../../../assets/logo6.png';
 
 
 const Counter = ({ end, suffix = '+', duration = 2000, decimals = 0 }) => {
@@ -91,16 +91,16 @@ const COMPLIANCE_BADGES = [
 // Infinite right-to-left logo marquee. The logo list is duplicated once so the
 // track can loop seamlessly at -50% translateX with no visible reset/jump.
 const LogoMarquee = () => {
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
+  const logos = [logo1, logo2, logo3, logo4, logo5];
   const loopLogos = [...logos, ...logos];
 
   return (
     <section className="logo-marquee-section">
       <div className="logo-marquee-heading">
         <h2>
-          Compliant, Certified, and Trusted by <span>Healthcare Authorities</span>
+          Compliant & Certifiedby <span>Healthcare Authorities</span>
         </h2>
-        <p>
+        <p className="logo-marquee-subheading">
           Our HIS aligns with global digital health frameworks and local
           department regulations to ensure seamless data interoperability
           and security.
@@ -145,7 +145,7 @@ const TrustSection = () => {
       suffix: '%',
       decimals: 1,
       label: 'PLATFORM UPTIME',
-      description: 'Reliable, always-on infrastructure with 99.9% server uptime',
+      description: 'Reliable, always on infrastructure with 99.9% server uptime',
     },
     {
       number: 45,

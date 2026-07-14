@@ -33,6 +33,7 @@
 /* Dynamically adjust borders on mobile when navigation is expanded */
 .mc-navbar--open {
   border-radius: 24px;
+  overflow: visible;
 }
 
 /* Soft glass sheen gradient */
@@ -160,19 +161,22 @@ color:black;
   display: none;
 }
 
-/* Small Responsive Toggle Button */
+/* Small Responsive Toggle Button — fixed size everywhere, never scales */
 .mc-navbar__toggle {
   display: none;
   align-items: center;
   justify-content: center;
   width: 34px;
   height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  flex: 0 0 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
   cursor: pointer;
-  flex-shrink: 0;
+  box-sizing: border-box;
   transition:
     background 0.18s ease,
     color 0.35s ease,
@@ -192,16 +196,43 @@ color:black;
   }
 
   .mc-navbar__inner {
+    position: relative;
     padding: 10px 16px;
+    /* leave clear space on both sides for the fixed logo + toggle */
+    padding-left: 56px;
+    padding-right: 60px;
+    min-height: 54px;
     flex-wrap: wrap;
+  }
+
+  /* Logo pinned to the top-left corner when the menu is closed */
+  .mc-navbar__brand {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    z-index: 2;
+    transition: left 0.2s ease, transform 0.2s ease;
+  }
+
+  /* When the menu is open, the logo moves to the top-center
+     (the toggle button stays pinned to the top-right corner) */
+  .mc-navbar--open .mc-navbar__brand {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .mc-navbar__cta--desktop {
     display: none;
   }
 
+  /* Toggle button pinned to the top-right corner, fixed size everywhere.
+     Stays flush with the top edge whether open or closed. */
   .mc-navbar__toggle {
     display: flex;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    z-index: 2;
   }
 
   .mc-navbar__links {
@@ -210,8 +241,9 @@ color:black;
     flex-direction: column;
     align-items: stretch;
     gap: 2px;
+    /* clears the pinned logo/toggle row before wrapping below it */
+    margin-top: 44px;
     padding-top: 12px;
-    margin-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -309,5 +341,3 @@ color:black;
     border-bottom: 1px solid rgba(15, 23, 42, 0.04);
   }
 }
-
-

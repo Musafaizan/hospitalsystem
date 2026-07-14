@@ -72,6 +72,10 @@
   pointer-events: none;
 }
 
+.logo-marquee-subheading{
+  color: #6b7280;
+}
+
 /* Because the logo list is duplicated, translating exactly -50%
    moves the track by one full set of logos, so the loop is seamless */
 @keyframes logoMarqueeScroll {
@@ -99,6 +103,9 @@
   }
   .logo-marquee-heading h2 {
     font-size: 1.85rem;
+  }
+  .logo-marquee-subheading {
+    font-size: 0.95rem;
   }
   .logo-marquee-item {
     padding: 0 28px;

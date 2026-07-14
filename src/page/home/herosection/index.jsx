@@ -156,7 +156,7 @@ export default function HospitalHero({
 
           <p className="hh-subtext hh-reveal" style={{ "--d": "240ms" }}>
             Streamline clinical workflows, automate billing, and elevate
-            patient care with a secure, AI-powered EHR/EMR platform. Built for
+            patient care with a secure, AI powered EHR/EMR platform. Built for
             hospitals that demand absolute efficiency.
           </p>
 

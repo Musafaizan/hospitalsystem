@@ -1,5 +1,5 @@
 import React from "react";
-import { Stethoscope, Mail, Phone, MapPin } from "lucide-react";
+import { Stethoscope, Mail, Phone, MapPin} from "lucide-react";
 import "./style.css";
 
 const PRODUCT_LINKS = [

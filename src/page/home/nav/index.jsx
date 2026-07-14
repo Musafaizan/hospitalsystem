@@ -57,7 +57,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header 
+    <header
       className={`mc-navbar ${isLight ? "mc-navbar--light" : ""} ${
         isOpen ? "mc-navbar--open" : ""
       }`}
@@ -116,4 +116,3 @@ export default function Navbar() {
     </header>
   );
 }
-

@@ -5,6 +5,7 @@ import TrustSection from './page/home/trust';
 import CtaSection from './page/home/cta1';
 import AIModelSection from './page/home/aimodel';
 import Features from './page/home/features';
+import ClientsMarquee from './page/home/client';
 import TestimonialsSection from './page/home/testimonials';
 import WhoWeServeSection from './page/home/whowe';
 import CtaSection2 from './page/home/cta2';
@@ -23,6 +24,7 @@ function App() {
       <CtaSection />
       <AIModelSection />
       <Features/>
+      <ClientsMarquee/>
       <TestimonialsSection/>
       <HMSComparisonTable/>
       <CtaSection2/>

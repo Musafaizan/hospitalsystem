@@ -47,10 +47,18 @@
   z-index: 1;
 }
 
-/* ── Left Text ── */
+/* ── Left Text ──
+   Explicitly left-aligned (block + flex children) so the badge,
+   title, description, buttons, and note all sit flush to the left
+   edge of the column on desktop, regardless of any alignment rules
+   inherited from elsewhere on the page. */
 .cta__text {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .cta__badge {
@@ -76,6 +84,7 @@
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 0 0 18px;
+  text-align: left;
 }
 
 .cta__title span {
@@ -93,15 +102,18 @@
   color: rgba(255, 255, 255, 0.5);
   margin: 0 0 32px;
   max-width: 460px;
+  text-align: left;
 }
 
 /* ── Buttons ── */
 .cta__buttons {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .cta__btn-primary {
@@ -162,6 +174,7 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.3);
   margin: 0;
+  text-align: left;
 }
 
 /* ── Right Image ── */
@@ -202,6 +215,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .cta__title,
+  .cta__desc,
+  .cta__note {
+    text-align: center;
   }
 
   .cta__desc {

@@ -69,6 +69,7 @@
   letter-spacing: -1px;
   line-height: 1.15;
   margin: 0 0 18px 0;
+  text-align: left;
 }
 
 .ai-heading span {
@@ -84,6 +85,7 @@
   line-height: 1.7;
   max-width: 520px;
   margin: 0 0 40px 0;
+  text-align: left;
 }
 
 /* ---------- Q&A cards ---------- */
@@ -135,6 +137,7 @@
   font-weight: 700;
   color: #1a1a2e;
   line-height: 1.4;
+  text-align: left;
 }
 
 .ai-qa-answer {
@@ -164,6 +167,11 @@
   font-size: 0.85rem;
   color: #4b5563;
   line-height: 1.6;
+  /* body copy is longer, so justify both edges for a tidy block
+     instead of a ragged right edge */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .ai-tag {

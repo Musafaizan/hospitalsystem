@@ -105,82 +105,92 @@ export default function RequestDemoSection() {
 
           <form className="demo-form" onSubmit={handleSubmit}>
             <div className="form-row">
-              <div className="form-field">
+              <div className="form-group">
                 <label htmlFor="demo-name">
                   Full Name<span className="req">*</span>
                 </label>
-                <input
-                  id="demo-name"
-                  type="text"
-                  required
-                  placeholder="Dr. Sara Ahmed"
-                  value={form.name}
-                  onChange={handleChange("name")}
-                />
+                <div className="form-field">
+                  <input
+                    id="demo-name"
+                    type="text"
+                    required
+                    placeholder="Dr. Sara Ahmed"
+                    value={form.name}
+                    onChange={handleChange("name")}
+                  />
+                </div>
               </div>
 
-              <div className="form-field">
+              <div className="form-group">
                 <label htmlFor="demo-email">
                   Official Work Email<span className="req">*</span>
                 </label>
-                <input
-                  id="demo-email"
-                  type="email"
-                  required
-                  placeholder="you@hospital.com"
-                  value={form.email}
-                  onChange={handleChange("email")}
-                />
+                <div className="form-field">
+                  <input
+                    id="demo-email"
+                    type="email"
+                    required
+                    placeholder="you@hospital.com"
+                    value={form.email}
+                    onChange={handleChange("email")}
+                  />
+                </div>
               </div>
             </div>
 
             <div className="form-row">
-              <div className="form-field">
+              <div className="form-group">
                 <label htmlFor="demo-org">
                   Hospital/Clinic Name<span className="req">*</span>
                 </label>
-                <input
-                  id="demo-org"
-                  type="text"
-                  required
-                  placeholder="City Care Hospital"
-                  value={form.org}
-                  onChange={handleChange("org")}
-                />
+                <div className="form-field">
+                  <input
+                    id="demo-org"
+                    type="text"
+                    required
+                    placeholder="City Care Hospital"
+                    value={form.org}
+                    onChange={handleChange("org")}
+                  />
+                </div>
               </div>
 
-              <div className="form-field">
+              <div className="form-group">
                 <label htmlFor="demo-volume">
                   Number of Beds / Monthly Patient Volume<span className="req">*</span>
                 </label>
-                <select
-                  id="demo-volume"
-                  required
-                  value={form.volume}
-                  onChange={handleChange("volume")}
-                >
-                  <option value="" disabled>
-                    Select an option
-                  </option>
-                  {VOLUME_OPTIONS.map((opt) => (
-                    <option value={opt} key={opt}>
-                      {opt}
+                <div className="form-field">
+                  <select
+                    id="demo-volume"
+                    required
+                    value={form.volume}
+                    onChange={handleChange("volume")}
+                  >
+                    <option value="" disabled>
+                      Select an option
                     </option>
-                  ))}
-                </select>
+                    {VOLUME_OPTIONS.map((opt) => (
+                      <option value={opt} key={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
             <div className="form-row">
-              <div className="form-field form-field--full">
+              <div className="form-group form-group--full">
                 <label htmlFor="demo-message">Message / Core Challenges</label>
-                <textarea
-                  id="demo-message"
-                  rows={4}
-                  placeholder="Tell us what's slowing your team down today..."
-                  value={form.message}
-                  onChange={handleChange("message")}
-                />
+                <div className="form-field">
+                  <textarea
+                    id="demo-message"
+                    rows={4}
+                    placeholder="Tell us what's slowing your team down today..."
+                    value={form.message}
+                    onChange={handleChange("message")}
+                  />
+                </div>
               </div>
             </div>
 

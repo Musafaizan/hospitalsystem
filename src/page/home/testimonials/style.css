@@ -145,12 +145,14 @@
   justify-content:center;
   align-items:center;
   gap:14px;
+ 
 }
 
 .mc-avatar-ring{
   width:52px;
   height:52px;
   padding:3px;
+   margin-bottom:20px;
   border-radius:50%;
   background:linear-gradient(135deg,var(--accent-teal),var(--accent-gold));
 }

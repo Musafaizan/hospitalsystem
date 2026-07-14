@@ -13,12 +13,12 @@ const AIModelSection = () => {
     {
       title: 'Automated Smart Medical Transcriptions',
       copy:
-        "Doctors speak; our integrated AI documents. Convert voice-to-text directly into the patient's EMR/EHR file during consultations.",
+        "Doctors speak; our integrated AI documents. Convert voice to text directly into the patient's EMR/EHR file during consultations.",
     },
     {
       title: 'Dynamic Intelligent Bed & Resource Allocation',
       copy:
-        'AI forecasts ER influxes and automatically optimizes ICU bed, surgery room, and staff schedules to prevent bottlenecks.',
+      'AI forecasts ER influxes and automatically optimizes ICU bed, surgery room, and staff schedules to prevent bottlenecks.',
     },
     {
       title: 'Smart Insurance Claims Predictive Analytics',

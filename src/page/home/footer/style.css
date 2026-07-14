@@ -19,9 +19,18 @@
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   gap: 40px;
   padding-bottom: 48px;
+  justify-items: start;
 }
 
 /* ---- Brand ---- */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
 .brand-row {
   display: flex;
   align-items: center;
@@ -62,10 +71,51 @@
   line-height: 1.6;
   color: var(--text-muted);
   max-width: 280px;
-  margin: 0;
+  margin: 0 0 20px;
+  text-align: left;
 }
 
-/* ---- Columns ---- */
+/* ---- Social links (LinkedIn only) ---- */
+.social-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.social-list a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dce6e8;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.social-list a svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-list a:hover {
+  color: #04211d;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- Columns: Product / Company / Contact ---- */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
 .col-title {
   font-size: 12px;
   font-weight: 700;
@@ -73,6 +123,8 @@
   text-transform: uppercase;
   color: var(--text-faint);
   margin: 0 0 20px;
+  text-align: left;
+  width: 100%;
 }
 
 .col-list,
@@ -82,7 +134,14 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 14px;
+  width: 100%;
+}
+
+.col-list li {
+  text-align: left;
+  width: 100%;
 }
 
 .col-list a {
@@ -91,6 +150,7 @@
   font-size: 15px;
   position: relative;
   transition: color 0.2s ease;
+  display: inline-block;
 }
 
 .col-list a::after {
@@ -119,6 +179,8 @@
   font-size: 15px;
   color: #dce6e8;
   line-height: 1.5;
+  text-align: left;
+  width: 100%;
 }
 
 .contact-list a {
@@ -188,7 +250,7 @@
 @keyframes reveal-up {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
@@ -200,7 +262,8 @@
   }
   .col-list a,
   .contact-list a,
-  .legal-list a {
+  .legal-list a,
+  .social-list a {
     transition: none;
   }
 }
@@ -226,12 +289,21 @@
   .footer-top {
     grid-template-columns: 1fr;
     gap: 32px;
+    justify-items: start;
+  }
+  .footer-col,
+  .footer-brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .col-title,
+  .col-list li,
+  .contact-list li {
+    text-align: left;
   }
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-
-  
     gap: 14px;
   }
   .legal-list {
