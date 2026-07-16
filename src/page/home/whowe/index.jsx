@@ -58,9 +58,9 @@ const providers = [
   {
     segment: 'Custom / Healthcare Network',
     title: 'Custom Ecosystem',
-    subtitle: 'For multi-branch hospital networks requiring localized server hosting and AI modeling.',
+    subtitle: 'For multi-branch hospital networks requiring localized server hosting.',
     features: [
-      'Dedicated Cloud/On-Premise deployment',
+      'Dedicated Cloud/On-Premise',
       'Full AI Agent Integration',
       'Custom APIs for Hardware',
       '24/7 Dedicated SLA Support',
@@ -75,9 +75,9 @@ const WhoWeServeSection = () => {
     <section className="serve-section">
       <div className="serve-container">
         <div className="serve-heading">
-          <span className="serve-eyebrow">Who We Serve</span>
+        
           <h2>
-            Built for every kind of <span>care provider</span>
+            Built for every<span> kind of care </span>
           </h2>
           <p>One system, indexed for how your team actually works — pick the tier that fits.</p>
         </div>

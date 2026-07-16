@@ -32,7 +32,7 @@ export default function Footer() {
               <Stethoscope strokeWidth={2} />
             </span>
             <span className="brand-name">
-              Medi<span className="accent">Core</span>
+              Cure<span className="accent">Verx</span>
             </span>
           </div>
           <p className="brand-desc">
@@ -67,7 +67,7 @@ export default function Footer() {
           <ul className="contact-list">
             <li>
               <Mail className="contact-icon" strokeWidth={1.8} />
-              <a href="mailto:hello@medicore.io">hello@medicore.io</a>
+              <a href="mailto:hello@cureverx.io">hello@cureverx.io</a>
             </li>
             <li>
               <Phone className="contact-icon" strokeWidth={1.8} />
@@ -82,7 +82,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p className="copyright">&copy; {year} MediCore. All rights reserved.</p>
+        <p className="copyright">&copy; {year} CureVerx. All rights reserved.</p>
         <ul className="legal-list">
           {LEGAL_LINKS.map((link) => (
             <li key={link.label}>

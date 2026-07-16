@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { name: "Trust", href: "#trust" },
   { name: "AI model", href: "#aimodel" },
   { name: "Features", href: "#features" },
-  { name: "testimonials", href: "#testimonials" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Competitors", href: "#competitors" },
   { name: "FAQ", href: "#faq" },
 ];
@@ -68,7 +68,7 @@ export default function Navbar() {
             <Stethoscope size={16} strokeWidth={2.4} />
           </span>
           <span className="mc-navbar__brand-text">
-            Medi<span className="mc-navbar__brand-accent">Core</span>
+            Cure<span className="mc-navbar__brand-accent">Verx</span>
           </span>
         </a>
 

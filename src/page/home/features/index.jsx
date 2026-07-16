@@ -19,9 +19,9 @@ const featuresData = [
     image: img1,
     description: 'Digital onboarding from day one. Maintain a single, immutable timeline of patient histories, demographics, and vitals.',
     capabilities: [
-      'Digital Onboarding: Paperless registration from day one',
-      'Unified Timeline: Immutable history of demographics and vitals',
-      'Instant Retrieval: Single record accessible across every department'
+      'Digital Onboarding: Paperless registration from day one.',
+      'Unified Timeline: Immutable history of demographics and vitals.',
+      'Instant Retrieval: Single record accessible across every department.'
     ]
   },
   {
@@ -32,9 +32,9 @@ const featuresData = [
     image: img2,
     description: 'Empower patients to view laboratory reports, download prescriptions, check active diagnoses, and manage appointments securely online.',
     capabilities: [
-      'Lab Reports: View results online, no waiting on phone calls',
-      'Prescriptions: Download and manage prescriptions anytime',
-      'Appointments: Book, reschedule, and track visits securely'
+      'Lab Reports: View results online, no waiting on phone calls.',
+      'Prescriptions: Download and manage prescriptions anytime.',
+      'Appointments: Book, reschedule, and track visits securely.'
     ]
   },
   {
@@ -45,22 +45,22 @@ const featuresData = [
     image: img6,
     description: 'Electronic prescribing (e-Rx) connects doctors directly to the in-house pharmacy and laboratory networks for rapid fulfillment.',
     capabilities: [
-      'e-Prescribing: Direct link from doctor to in-house pharmacy',
-      'Lab Integration: Orders routed straight to diagnostic networks',
-      'Rapid Fulfillment: Real-time inventory and dispensing sync'
+      'e-Prescribing: Direct link from doctor to in-house pharmacy.',
+      'Lab Integration: Orders routed straight to diagnostic networks.',
+      'Rapid Fulfillment: Real-time inventory and dispensing sync.'
     ]
   },
   {
     id: 4,
-    title: 'Advanced Surgery & Ward Management',
+    title: 'Advanced Surgery & Ward Manage',
     headline: 'Every Bed, Every Theater',
     icon: 'Scissors',
     image: img7,
     description: 'Comprehensive scheduling and logging for operating theaters, pre-op, and post-op tracking without paper trail delays.',
     capabilities: [
-      'OT Scheduling: Conflict-free booking for operating theaters',
-      'Pre-Op Tracking: Structured checklists before every procedure',
-      'Post-Op Logging: Paperless recovery and ward monitoring'
+      'OT Scheduling: Conflict-free booking for operating theaters.',
+      'Pre-Op Tracking: Structured checklists before every procedure.',
+      'Post-Op Logging: Paperless recovery and ward monitoring.'
     ]
   },
   {
@@ -71,9 +71,9 @@ const featuresData = [
     image: img3,
     description: 'Automated corporate invoicing, co-pay tracking, automated rebates, and deep financial auditing tailored for complex hospital setups.',
     capabilities: [
-      'Corporate Invoicing: Automated billing for institutional clients',
-      'Co-Pay Tracking: Real-time deductible and rebate calculation',
-      'Financial Auditing: Deep reporting built for complex hospital setups'
+      'Corporate Invoicing: Automated billing for institutional clients.',
+      'Co-Pay Tracking: Real-time deductible and rebate calculation.',
+      'Financial Auditing: Deep reporting built for complex hospital setups.'
     ]
   }
 ];
@@ -112,7 +112,7 @@ const Features = () => {
          <div className="feature-heading">
             <h2>End-to-End Clinical & <span>Administrative Control</span></h2>
           <p className="section-descriptions">
-            Comprehensive hospital management tools in one unified platform
+            Comprehensive hospital management tools in one unified platform.
           </p>
         </div>
 
@@ -179,8 +179,8 @@ const Features = () => {
                           <motion.li key={idx} className="capability-item" variants={itemVariants}>
                             <Icons.CheckCircle2 size={18} className="capability-icon" />
                             <div>
-                              <strong>{label}</strong>
-                              {value && <span> : {value}</span>}
+                              <strong>{label}:</strong>
+                              {value && <span className="capability-value">{value}</span>}
                             </div>
                           </motion.li>
                         );

@@ -36,8 +36,8 @@ export default function RequestDemoSection() {
       `Full Name: ${form.name}`,
       `Official Work Email: ${form.email}`,
       `Hospital/Clinic Name: ${form.org}`,
-      `Number of Beds / Monthly Patient Volume: ${form.volume}`,
-      `Message / Core Challenges: ${form.message}`,
+      `Number of Beds/Monthly Patient Volume: ${form.volume}`,
+      `Message/Core Challenges: ${form.message}`,
     ].join("\n");
 
     const payload = new URLSearchParams({
@@ -88,14 +88,14 @@ export default function RequestDemoSection() {
     <section className="demo-section" id="demo">
       <div className="demo-container">
         <div className="demo-image">
-          <img src={demoImage} alt="MediCore platform preview" />
+          <img src={demoImage} alt="CureVerx platform preview" />
         </div>
 
         <div className="demo-form-wrap">
-          <span className="demo-eyebrow">Book Your Walkthrough</span>
+         
 
           <h2 className="demo-heading">
-            Request a Personalized Demo <span>&amp; System Breakdown</span>
+            Request a Personalized Demo &amp;<span> System Breakdown</span>
           </h2>
 
           <p className="demo-subtext">
@@ -141,7 +141,7 @@ export default function RequestDemoSection() {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="demo-org">
-                  Hospital/Clinic Name<span className="req">*</span>
+                  Hospital / Clinic Name<span className="req">*</span>
                 </label>
                 <div className="form-field">
                   <input
@@ -197,7 +197,7 @@ export default function RequestDemoSection() {
             <button type="submit" className="demo-submit" disabled={isSubmitting}>
               {isSubmitting
                 ? "Sending your request..."
-                : "Schedule My Live Architecture Preview"}
+                : "Sumbit"}
             </button>
 
             {submitted && (

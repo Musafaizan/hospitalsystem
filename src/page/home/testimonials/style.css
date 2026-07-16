@@ -6,7 +6,7 @@
   --text-muted: #5c6b67;
   --accent-teal: #0f9d8e;
   --accent-mint: #84e5d3;
-  --accent-gold: #e8c468;
+  --accent-gold: #0f9d8e;
   --btn-bg: #ffffff;
   --dot-inactive: rgba(255,255,255,.28);
 }
@@ -63,7 +63,7 @@
 }
 
 .mc-eyebrow{
-  color:var(--accent-mint);
+  color:#84e5d3;
   font-size:.72rem;
   letter-spacing:2px;
   text-transform:uppercase;
@@ -82,7 +82,7 @@
 }
 
 .mc-heading-accent{
-  background:#2dd4bf;
+  background:#84e5d3;
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;

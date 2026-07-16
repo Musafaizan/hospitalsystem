@@ -20,7 +20,7 @@ describe('RequestDemoSection', () => {
       target: { value: 'musa@example.com' },
     });
     fireEvent.change(screen.getByLabelText(/hospital\/clinic name/i), {
-      target: { value: 'MediCore' },
+      target: { value: 'CureVerx' },
     });
     fireEvent.change(screen.getByLabelText(/number of beds/i), {
       target: { value: 'Under 20 beds / <500 patients per month' },

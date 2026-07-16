@@ -21,7 +21,7 @@ const AIModelSection = () => {
       'AI forecasts ER influxes and automatically optimizes ICU bed, surgery room, and staff schedules to prevent bottlenecks.',
     },
     {
-      title: 'Smart Insurance Claims Predictive Analytics',
+      title: 'Insurance Claims Predictive Analytics',
       copy:
         'Reduce claim rejections. The built-in AI audits ICD-10 medical coding instantly before submission to ensure higher approval rates.',
     },
@@ -33,19 +33,18 @@ const AIModelSection = () => {
 
       <div className="ai-container">
         <div className="ai-content">
-          <span className="ai-eyebrow">
+          {/* <span className="ai-eyebrow">
             <span className="ai-eyebrow-dot"></span>
             INTELLIGENT MANAGEMENT, AUTOMATED
-          </span>
+          </span> */}
 
           <h2 className="ai-heading">
-            Smart Healthcare: <span>AI-Driven</span> Clinical Intelligence
+            Smart Healthcare:AI-Driven<span> Clinical Intelligence</span> 
           </h2>
 
           <p className="ai-subtext">
-            Our built-in clinical AI reads across patient history, documentation,
-            capacity and claims data in real time so your care teams get instant,
-            accurate insight instead of digging through charts.
+           Built-in clinical AI analyzes patient records, documentations and claims
+            in real time,delivering instant insight for faster,smarter care. 
           </p>
 
           <div className="ai-qa-grid">

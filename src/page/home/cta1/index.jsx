@@ -9,10 +9,10 @@ export default function CTA() {
         <div className="cta__text">
           <span className="cta__badge">✦ Get Started Today</span>
           <h2 className="cta__title">
-             Ready to see how it works <span>in a real clinical setting?</span>
+             Ready to see how it works <span><br />in a real clinical setting?</span>
           </h2>
           <p className="cta__desc">
-            Join 12,000+ healthcare providers who trust MediCore to manage
+            Join 12,000+ healthcare providers who trust CureVerx to manage
             patients, streamline operations, and deliver exceptional care.
           </p>
           <div className="cta__buttons">
@@ -38,7 +38,7 @@ export default function CTA() {
 
         {/* Right — Image */}
         <div className="cta__image-wrap">
-          <img src={ctaImage} alt="MediCore Dashboard" className="cta__image" />
+          <img src={ctaImage} alt="CureVerx Dashboard" className="cta__image" />
         </div>
       </div>
     </section>

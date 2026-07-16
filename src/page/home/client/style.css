@@ -65,8 +65,13 @@
   will-change: transform;
 }
 
-.clients-marquee-wrapper:hover .clients-marquee-track {
-  animation-play-state: paused;
+/* FIX: only pause on hover for devices with a real mouse.
+   Without this guard, mobile taps trigger a "stuck" hover state
+   and the animation never resumes after touch. */
+@media (hover: hover) and (pointer: fine) {
+  .clients-marquee-wrapper:hover .clients-marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 .clients-marquee-item {
@@ -87,8 +92,12 @@
   pointer-events: none;
 }
 
-.clients-marquee-item:hover img {
-  transform: scale(1.06);
+/* FIX: same guard for the per-logo hover scale, so tapping a logo
+   on mobile doesn't leave it "stuck" scaled up either. */
+@media (hover: hover) and (pointer: fine) {
+  .clients-marquee-item:hover img {
+    transform: scale(1.06);
+  }
 }
 
 /* Because the logo list is duplicated, translating exactly -50%

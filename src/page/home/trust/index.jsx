@@ -39,7 +39,7 @@ const Counter = ({ end, suffix = '+', duration = 2000, decimals = 0 }) => {
           };
           requestAnimationFrame(step);
         } else if (!isVisible) {
-          // reset so it plays again next time it scrolls into view
+          
           animatingRef.current = false;
           setCount(0);
         }
@@ -68,23 +68,23 @@ const Counter = ({ end, suffix = '+', duration = 2000, decimals = 0 }) => {
 const COMPLIANCE_BADGES = [
   {
     icon: Share2,
-    label: 'HL7 / FHIR Standards Compliance',
+    label: 'HL7/FHIR Compliance',
     description: 'For seamless health data exchange',
   },
   {
     icon: Lock,
-    label: 'HIPAA & GDPR Data Privacy Certified',
+    label: 'HIPAA & GDPR Certified',
     description: 'Absolute patient data encryption',
   },
   {
     icon: Landmark,
-    label: 'National Ministry of Health Regulations',
-    description: 'Local healthcare board clearance',
+    label: 'Health Regulations',
+    description: 'Local healthcare board official clearance',
   },
   {
     icon: ShieldCheck,
     label: 'ISO 27001 Certified',
-    description: 'Information security management systems',
+    description: 'Information security management',
   },
 ];
 
@@ -145,7 +145,7 @@ const TrustSection = () => {
       suffix: '%',
       decimals: 1,
       label: 'PLATFORM UPTIME',
-      description: 'Reliable, always on infrastructure with 99.9% server uptime',
+      description: 'Reliable infrastructure with 99.9% server uptime',
     },
     {
       number: 45,
@@ -157,11 +157,11 @@ const TrustSection = () => {
       number: 150,
       suffix: '+',
       label: 'CONNECTED MODULES',
-      description: 'Medical modules and lab integrations connected out of the box',
+      description: 'Medical modules & lab integrations included',
     },
     {
       isText: true,
-      text: 'Zero',
+      text: '0',
       suffix: '',
       label: 'REVENUE LEAKAGE',
       description: 'Automated invoicing that closes every billing gap',
@@ -176,7 +176,7 @@ const TrustSection = () => {
         <div className="trust-container">
           <div className="trust-heading">
             <h2>Trusted <span>Worldwide</span></h2>
-            <p>Powering healthcare providers globally with reliable and scalable solutions</p>
+            <p>Powering healthcare providers globally with reliable and scalable solutions.</p>
           </div>
 
           <div className="trust-grid">

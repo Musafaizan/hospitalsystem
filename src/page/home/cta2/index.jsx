@@ -10,7 +10,7 @@ export default function CTA2() {
         </span>
 
         <h2 className="cta2__title">
-         Let’s map out an efficiency plan  <span>tailored to your facility's bed count. </span>
+         Let’s map an efficiency plan <span>for your facility's bed count.</span>
         </h2>
 
         <p className="cta2__desc">

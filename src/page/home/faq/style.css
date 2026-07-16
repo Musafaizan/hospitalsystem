@@ -1,5 +1,5 @@
 /* ============================================
-   MediCore FAQ Section Styles
+   CureVerx FAQ Section Styles
    ============================================ */
 
 /* Keyframe Animations */
@@ -248,6 +248,7 @@
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 14px rgba(0, 236, 208, 0.2);
+  margin-left: 36px;
 }
 
 .faq__info-cta:hover {

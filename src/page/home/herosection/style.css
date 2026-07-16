@@ -140,10 +140,6 @@
   gap: clamp(32px, 5vw, 64px);
 }
 
-/* Text column is centered within itself on every screen size,
-   so headline/subtext/buttons all line up on the same center axis
-   inside the left column (desktop keeps its own two-column grid,
-   the visual card still sits in the right column as before). */
 .hh-content {
   max-width: 620px;
   order: 1;
@@ -151,9 +147,7 @@
   text-align: center;
 }
 
-/* ---------- reveal animations (both replay every time the section
-   re-enters the viewport, via the hh-hero--visible toggle).
-   Durations are intentionally unhurried. ---------- */
+/* ---------- reveal animations ---------- */
 
 .hh-reveal {
   opacity: 0;
@@ -169,7 +163,6 @@
   transform: translateY(0);
 }
 
-/* text rises up; visual + chips glide in from the right */
 .hh-reveal-right {
   opacity: 0;
   transform: translateX(90px);
@@ -216,12 +209,13 @@
 /* ---------- headline ---------- */
 
 .hh-headline {
-  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
-  line-height: 1.14;
+  font-size: clamp(1.7rem, 3.6vw, 2.75rem);
+  line-height: 1.22;
   font-weight: 800;
   color: #1a1a2e;
-  letter-spacing: -1.2px;
-  margin: 0 0 22px 0;
+  letter-spacing: -1px;
+  margin: 0 auto 22px;
+  max-width: 640px;
 }
 
 .hh-highlight {
@@ -257,11 +251,15 @@
   stroke-dashoffset: 0;
 }
 
+/* ---------- subtext ---------- */
+
 .hh-subtext {
   font-size: clamp(0.98rem, 1.4vw, 1.12rem);
   line-height: 1.7;
   color: #6b7280;
   margin: 0 0 18px 0;
+  text-align: justify;
+  text-align-last: center;
 }
 
 .hh-trust-line {
@@ -525,32 +523,34 @@
   display: block;
 }
 
+/* ---------- ECG line ----------
+   Self-drawing pulse (same technique as CTA2's pulse divider):
+   stroke-dasharray/offset animate the trace from 0-length
+   drawn, sweeping left -> right, then reset and repeat, giving
+   a continuous heartbeat-monitor feel instead of a static line
+   with a highlight passing over it. */
+
 .hh-ecg-path {
   stroke: #2dd4bf;
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
   filter: drop-shadow(0 0 5px rgba(45, 212, 191, 0.65));
+  stroke-dasharray: 640;
+  stroke-dashoffset: 640;
+  animation: hhEcgDraw 3.4s ease-in-out infinite;
 }
 
-.hh-ecg-sweep {
-  position: absolute;
-  top: 0;
-  left: -40%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(248, 249, 251, 0.18) 50%,
-    transparent 100%
-  );
-  animation: hhSweep 4.4s linear infinite;
-}
-
-@keyframes hhSweep {
-  0% { left: -40%; }
-  100% { left: 100%; }
+@keyframes hhEcgDraw {
+  0% {
+    stroke-dashoffset: 640;
+  }
+  55% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -640;
+  }
 }
 
 .hh-monitor-caption {
@@ -560,15 +560,7 @@
   font-weight: 500;
 }
 
-/* ---------- floating chips ----------
-   Two layers: hh-chip-slide (absolute position + slide-in-from-right
-   reveal transition) wraps hh-chip (background/shadow + continuous
-   float animation). Keeping them on separate elements means the
-   reveal's translateX and the float's translateY never fight over
-   the same `transform` property. Visible and floating the same way
-   at EVERY screen size. On mobile/tablet, chip-one (Patient Records)
-   is deliberately kept at a POSITIVE offset (never pushed above the
-   visual card) so it can't ride up under a fixed navbar. */
+/* ---------- floating chips ---------- */
 
 .hh-chip-slide {
   position: absolute;
@@ -585,6 +577,8 @@
   box-shadow: 0 14px 30px rgba(26, 26, 46, 0.1);
   animation: hhFloat 6.5s ease-in-out infinite;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  margin-top: 49px;
+  margin-right: 20px;
 }
 
 .hh-chip:hover {
@@ -615,8 +609,6 @@
   white-space: nowrap;
 }
 
-/* Desktop positions: card is tall enough that a small negative offset
-   on chip-one still sits well clear of anything above the section. */
 .chip-one {
   top: -6%;
   right: -6%;
@@ -660,10 +652,13 @@
   .hh-particle,
   .hh-eyebrow-dot,
   .hh-live-dot,
-  .hh-ecg-sweep,
+  .hh-ecg-path,
   .hh-chip,
   .hh-visual-glow {
     animation: none !important;
+  }
+  .hh-ecg-path {
+    stroke-dashoffset: 0;
   }
   .hh-underline path {
     transition: none;
@@ -673,11 +668,6 @@
 
 /* ================================================= */
 /* RESPONSIVE                                         */
-/* Tablet & mobile: visual goes ABOVE the text via the */
-/* grid `order` swap below. chip-one is pinned to a    */
-/* positive top offset so it can never ride up under   */
-/* a fixed navbar; the other two keep floating around   */
-/* the card just like on desktop.                       */
 /* ================================================= */
 
 @media (max-width: 1180px) {
@@ -687,7 +677,6 @@
   }
 }
 
-/* ---- Tablet (and mobile, since mobile inherits these) ---- */
 @media (max-width: 1024px) {
   .hh-hero {
     padding-top: calc(var(--hh-nav-h) + clamp(28px, 6vw, 48px));
@@ -697,13 +686,10 @@
     grid-template-columns: 1fr;
   }
 
-  /* image / monitor visual on top, text below */
   .hh-visual {
     order: 1;
     margin: 0 0 40px;
     min-height: 380px;
-    /* breathing room above the card so the floating chip-one never
-       needs a negative offset that could tuck under a fixed navbar */
     padding-top: 34px;
   }
   .hh-content {
@@ -727,7 +713,6 @@
   }
 }
 
-/* ---- Tablet portrait / large phones ---- */
 @media (max-width: 760px) {
   .hh-monitor-card {
     max-width: 380px;
@@ -752,9 +737,11 @@
     right: 4%;
     bottom: -4%;
   }
+  .hh-headline {
+    max-width: 480px;
+  }
 }
 
-/* ---- Phones ---- */
 @media (max-width: 560px) {
   .hh-hero {
     padding-left: 16px;
@@ -789,10 +776,6 @@
     height: 110px;
   }
 
-  /* chips stay visible + floating, just pulled fully inside the
-     viewport and slightly smaller so nothing clips at the edges.
-     chip-one keeps its positive/zero top so it can't ride up
-     above the section (and under a fixed navbar). */
   .hh-chip {
     padding: 8px 12px;
     gap: 8px;
@@ -820,9 +803,11 @@
     bottom: -8%;
     right: 2%;
   }
+  .hh-headline {
+    max-width: 100%;
+  }
 }
 
-/* ---- Small phones ---- */
 @media (max-width: 400px) {
   .hh-monitor-card {
     max-width: 270px;

@@ -67,7 +67,7 @@ const Icon = {
 
 const CHIPS = [
   { label: "Patient Records", sub: "Updated live", pos: "chip-one" },
-  { label: "Pharmacy", sub: "Stock synced", pos: "chip-two" },
+  // { label: "Pharmacy", sub: "Stock synced", pos: "chip-two" },
   { label: "Lab Reports", sub: "Auto-verified", pos: "chip-three" },
 ];
 
@@ -151,13 +151,11 @@ export default function HospitalHero({
                 <path d="M2 9c60-9 200-9 316 0" />
               </svg>
             </span>
-            .
           </h1>
 
           <p className="hh-subtext hh-reveal" style={{ "--d": "240ms" }}>
-            Streamline clinical workflows, automate billing, and elevate
-            patient care with a secure, AI powered EHR/EMR platform. Built for
-            hospitals that demand absolute efficiency.
+           Streamline clinical workflows,automate billing,and elevate patient care
+            with an AI-powered EHR/EMR platform.Built for hospitals that demand efficiency.
           </p>
 
           <p className="hh-trust-line hh-reveal" style={{ "--d": "340ms" }}>
@@ -174,20 +172,6 @@ export default function HospitalHero({
               View System Architecture
             </a>
           </div>
-
-          {/* <ul className="hh-stats hh-reveal" style={{ "--d": "540ms" }}>
-            {STATS.map(({ icon: StatIcon, value, label }) => (
-              <li className="hh-stat" key={label}>
-                <span className="hh-stat-icon-wrap">
-                  <StatIcon className="hh-stat-icon" />
-                </span>
-                <span className="hh-stat-text">
-                  <span className="hh-stat-value">{value}</span>
-                  <span className="hh-stat-label">{label}</span>
-                </span>
-              </li>
-            ))}
-          </ul> */}
         </div>
 
         <div className="hh-visual hh-reveal-right" style={{ "--d": "160ms" }}>
@@ -215,7 +199,6 @@ export default function HospitalHero({
                   fill="none"
                 />
               </svg>
-              <span className="hh-ecg-sweep" />
             </div>
 
             <p className="hh-monitor-caption">All departments connected</p>

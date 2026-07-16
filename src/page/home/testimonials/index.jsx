@@ -26,7 +26,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "Our billing errors dropped almost overnight. MediCore keeps insurance claims, invoices, and pharmacy charges in one place, so nothing falls through the cracks.",
+      "Our billing errors dropped almost overnight. CureVerx keeps insurance claims, invoices, and pharmacy charges in one place, so nothing falls through the cracks.",
     boldPart: "keeps insurance claims, invoices, and pharmacy charges in one place",
     name: "Sana Farooq",
     title: "Finance Director",
@@ -46,7 +46,7 @@ const testimonials = [
   {
     id: 5,
     quote:
-      "Rolling out MediCore across five branches took weeks, not months. Our nursing staff picked it up almost instantly, and reporting to management is finally consistent.",
+      "Rolling out CureVerx across five branches took weeks, not months. Our nursing staff picked it up almost instantly, and reporting to management is finally consistent.",
     boldPart: "reporting to management is finally consistent",
     name: "Nadia Sheikh",
     title: "Director of Nursing Services",
@@ -89,7 +89,7 @@ const slideVariants = {
   }),
 };
 
-export default function MediCoreTestimonials() {
+export default function CureVerxTestimonials() {
   const [[index, direction], setIndexState] = useState([0, 0]);
   const [isPaused, setIsPaused] = useState(false);
   const timerRef = useRef(null);
@@ -148,7 +148,7 @@ export default function MediCoreTestimonials() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.05 }}
       >
-        Our Clients Love <span className="mc-heading-accent">MediCore</span>
+        Our Clients Love <span className="mc-heading-accent">CureVerx</span>
       </motion.h2>
 
       <div className="mc-carousel">

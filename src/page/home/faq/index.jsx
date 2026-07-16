@@ -108,28 +108,12 @@ export default function FAQ() {
       <div className="faq__bg-glow faq__bg-glow--2" />
       <div className="faq__bg-grid" />
       <div className="faq__inner">
-        {/* Header */}
+        
         <div className="faq__header">
-          <span className="faq__badge">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            Frequently Asked Questions
-          </span>
+          
           <h2 className="faq__title">
-            Everything you need to know about{" "}
-            <span className="faq__title-highlight">MediCore</span>
+            Everything you need to know {" "}
+            <span className="faq__title-highlight"> about CureVerx</span>
           </h2>
           <p className="faq__subtitle">
             Have questions? We've got answers. If you can't find what you're
@@ -157,8 +141,7 @@ export default function FAQ() {
               </div>
               <h3 className="faq__info-title">Still have questions?</h3>
               <p className="faq__info-text">
-                Can't find the answer you're looking for? Our friendly support
-                team is here to help.
+                Need more help? Our support team is here to help.
               </p>
               <a href="#demo" className="faq__info-cta">
                 <span>Get in touch</span>
