@@ -79,7 +79,7 @@ const COMPLIANCE_BADGES = [
   {
     icon: Landmark,
     label: 'Health Regulations',
-    description: 'Local healthcare board official clearance',
+    description: 'Local healthcare board clearance',
   },
   {
     icon: ShieldCheck,

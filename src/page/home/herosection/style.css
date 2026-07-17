@@ -209,13 +209,14 @@
 /* ---------- headline ---------- */
 
 .hh-headline {
-  font-size: clamp(1.7rem, 3.6vw, 2.75rem);
-  line-height: 1.22;
-  font-weight: 800;
-  color: #1a1a2e;
-  letter-spacing: -1px;
-  margin: 0 auto 22px;
-  max-width: 640px;
+    font-size: clamp(1.7rem, 3.6vw, 2.45rem);
+    line-height: 1.22;
+    font-weight: 800;
+    color: #1a1a2e;
+    letter-spacing: -1px;
+    margin: 0 auto 22px;
+    max-width: 640px;
+    padding-left: 7px;
 }
 
 .hh-highlight {
@@ -252,14 +253,14 @@
 }
 
 /* ---------- subtext ---------- */
-
 .hh-subtext {
-  font-size: clamp(0.98rem, 1.4vw, 1.12rem);
-  line-height: 1.7;
-  color: #6b7280;
-  margin: 0 0 18px 0;
-  text-align: justify;
-  text-align-last: center;
+    font-size: clamp(0.98rem, 1.4vw, 0.99rem);
+    line-height: 1.7;
+    color: #6b7280;
+    margin: 0 0 18px 0;
+    text-align: justify;
+    text-align-last: center;
+    padding-left: 23px;
 }
 
 .hh-trust-line {

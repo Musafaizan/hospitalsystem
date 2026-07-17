@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-import aiImage from '../../../assets/ai-model.png';
+import aiImage from '../../../assets/ai-section1.png';
 
 const AIModelSection = () => {
   const features = [
