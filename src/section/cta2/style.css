@@ -1,0 +1,301 @@
+/* ============================================
+   CureVerx — CTA Section 2 (Centered / Pulse)
+   ============================================ */
+
+.cta2 {
+  width: 100%;
+  background-color: #031322;
+  padding: 56px 48px 48px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background glow, centered top */
+.cta2::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 236, 208, 0.07), transparent 70%);
+  top: -320px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Layout ── */
+.cta2__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Badge ── */
+.cta2__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #00ecd0;
+  background: rgba(0, 236, 208, 0.08);
+  border: 1px solid rgba(0, 236, 208, 0.15);
+  padding: 7px 16px 7px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+
+.cta2__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ecd0;
+  box-shadow: 0 0 0 0 rgba(0, 236, 208, 0.6);
+  animation: cta2-ping 1.8s ease-out infinite;
+}
+
+@keyframes cta2-ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 236, 208, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(0, 236, 208, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 236, 208, 0);
+  }
+}
+
+/* ── Title ── */
+.cta2__title {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 18px;
+  max-width: 600px;
+}
+
+.cta2__title span {
+  background: linear-gradient(135deg, #00ecd0, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta2__desc {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 26px;
+  max-width: 460px;
+}
+
+/* ── Buttons ── */
+.cta2__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.cta2__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #021a16;
+  background: #00ecd0;
+  padding: 14px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 236, 208, 0.2);
+}
+
+.cta2__btn-primary:hover {
+  background: #00dfc4;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 236, 208, 0.3);
+}
+
+.cta2__btn-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.cta2__btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.cta2__btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cta2__btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── Signature: ECG pulse divider ── */
+.cta2__pulse {
+  width: 100%;
+  max-width: 600px;
+  height: 30px;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+.cta2__pulse-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cta2__pulse-line {
+  stroke: #00ecd0;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: cta2-draw 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(0, 236, 208, 0.5));
+}
+
+@keyframes cta2-draw {
+  0% {
+    stroke-dashoffset: 900;
+  }
+  55% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -900;
+  }
+}
+
+/* ── Stats strip ── */
+.cta2__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 18px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+.cta2__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cta2__stat-value {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.cta2__stat-label {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cta2__stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 640px) {
+  .cta2 {
+    padding: 48px 24px 40px;
+  }
+
+  .cta2__title {
+    font-size: 30px;
+  }
+
+  .cta2__desc {
+    font-size: 15px;
+  }
+
+  .cta2__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta2__btn-primary,
+  .cta2__btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta2__stats {
+    gap: 16px;
+    padding: 20px 16px;
+    width: 100%;
+  }
+
+  .cta2__stat-value {
+    font-size: 19px;
+  }
+
+  .cta2__stat-label {
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta2__badge-dot,
+  .cta2__pulse-line {
+    animation: none;
+  }
+
+  .cta2__pulse-line {
+    stroke-dashoffset: 0;
+  }
+}

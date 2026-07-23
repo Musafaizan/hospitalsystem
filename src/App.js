@@ -1,8 +1,16 @@
 import './App.css';
-import LandingPage from './pages/LandingPage/LandingPage';
+import Navbar from './component/nav';
+import Footer from './component/footer';
+import Home from './pages/home';
 
 function App() {
-  return <LandingPage />;
+  return (
+    <div className="App">
+      <Navbar />
+      <Home />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
