@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Share2, Lock, Landmark, ShieldCheck } from 'lucide-react';
 import './style.css';
-import logo1 from '../../../assets/logo1.png';
-import logo2 from '../../../assets/logo2.png';
-import logo3 from '../../../assets/logo3.png';
-import logo4 from '../../../assets/logo4.png';
-import logo5 from '../../../assets/logo5.png';
-// import logo6 from '../../../assets/logo6.png';
+import { complianceBadges, trustLogos, trustStats, trustHeading, logoMarqueeHeading } from '../../../data/data';
 
 
 const Counter = ({ end, suffix = '+', duration = 2000, decimals = 0 }) => {
@@ -65,45 +60,25 @@ const Counter = ({ end, suffix = '+', duration = 2000, decimals = 0 }) => {
   );
 };
 
-const COMPLIANCE_BADGES = [
-  {
-    icon: Share2,
-    label: 'HL7/FHIR Compliance',
-    description: 'For seamless health data exchange',
-  },
-  {
-    icon: Lock,
-    label: 'HIPAA & GDPR Certified',
-    description: 'Absolute patient data encryption',
-  },
-  {
-    icon: Landmark,
-    label: 'Health Regulations',
-    description: 'Local healthcare board clearance',
-  },
-  {
-    icon: ShieldCheck,
-    label: 'ISO 27001 Certified',
-    description: 'Information security management',
-  },
-];
+const COMPLIANCE_BADGES = complianceBadges.map((badge) => ({
+  ...badge,
+  icon: { Share2, Lock, Landmark, ShieldCheck }[badge.icon],
+}));
 
 // Infinite right-to-left logo marquee. The logo list is duplicated once so the
 // track can loop seamlessly at -50% translateX with no visible reset/jump.
 const LogoMarquee = () => {
-  const logos = [logo1, logo2, logo3, logo4, logo5];
+  const logos = trustLogos;
   const loopLogos = [...logos, ...logos];
 
   return (
     <section className="logo-marquee-section">
       <div className="logo-marquee-heading">
         <h2>
-          Compliant & Certifiedby <span>Healthcare Authorities</span>
+          {logoMarqueeHeading.title} <span>{logoMarqueeHeading.accent}</span>
         </h2>
         <p className="logo-marquee-subheading">
-          Our HIS aligns with global digital health frameworks and local
-          department regulations to ensure seamless data interoperability
-          and security.
+          {logoMarqueeHeading.description}
         </p>
       </div>
 
@@ -139,34 +114,7 @@ const LogoMarquee = () => {
 };
 
 const TrustSection = () => {
-  const stats = [
-    {
-      number: 99.9,
-      suffix: '%',
-      decimals: 1,
-      label: 'PLATFORM UPTIME',
-      description: 'Reliable infrastructure with 99.9% server uptime',
-    },
-    {
-      number: 45,
-      suffix: '%',
-      label: 'FASTER CHECK-INS',
-      description: 'Reduction in patient check-in and waiting times',
-    },
-    {
-      number: 150,
-      suffix: '+',
-      label: 'CONNECTED MODULES',
-      description: 'Medical modules & lab integrations included',
-    },
-    {
-      isText: true,
-      text: '0',
-      suffix: '',
-      label: 'REVENUE LEAKAGE',
-      description: 'Automated invoicing that closes every billing gap',
-    },
-  ];
+  const stats = trustStats;
 
   return (
     <>
@@ -175,8 +123,8 @@ const TrustSection = () => {
       <section className="trust-section" id="trust" data-nav-theme="dark">
         <div className="trust-container">
           <div className="trust-heading">
-            <h2>Trusted <span>Worldwide</span></h2>
-            <p>Powering healthcare providers globally with reliable and scalable solutions.</p>
+            <h2>{trustHeading.title} <span>{trustHeading.accent}</span></h2>
+            <p>{trustHeading.description}</p>
           </div>
 
           <div className="trust-grid">

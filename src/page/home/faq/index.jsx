@@ -1,36 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./style.css";
-const faqData = [
-  {
-    question: "How secure is patient medical data on this platform?",
-    answer:
-      "Security is paramount. The system utilizes military-grade AES-256 encryption for data at rest and TLS 1.3 for data in transit. We are fully compliant with global data protection architectures (HIPAA/GDPR) ensuring your hospital stays completely liability-free.",
-  },
-  {
-    question:
-      "Can the platform integrate with our existing laboratory hardware and imaging machines?",
-    answer:
-      "Yes. Our HIS features an advanced API layer that seamlessly connects with standard medical imaging equipment, HL7-compliant laboratory analyzers, and DICOM formats for radiology.",
-  },
-  {
-    question:
-      "Is there a limit to the number of doctors, staff, or patients the system can handle?",
-    answer:
-      "No. The underlying architecture is built to auto-scale on secure servers, comfortably supporting massive traffic influxes, hundreds of concurrent medical personnel, and millions of patient medical profiles.",
-  },
-  {
-    question:
-      "How long does a complete data migration from our legacy software take?",
-    answer:
-      "Depending on your legacy system's structural complexity, our dedicated implementation team safely migrates your history records, registry entries, and financial ledgers within 2 to 4 weeks with zero active operational downtime.",
-  },
-  {
-    question:
-      "Does the platform support localized billing, tax structures, and country-specific insurance networks?",
-    answer:
-      "Absolutely. The system houses an incredibly diversified financial module allowing you to configure multi-currency invoicing, localized country tax structures, and automated insurance billing flows tailored precisely to your region.",
-  },
-];
+import { faqData, faqHeader, faqInfoCard } from '../../../data/data';
 function AccordionItem({ item, index, isOpen, onToggle }) {
   const contentRef = useRef(null);
   const [height, setHeight] = useState(0);
@@ -112,12 +82,11 @@ export default function FAQ() {
         <div className="faq__header">
           
           <h2 className="faq__title">
-            Everything you need to know {" "}
-            <span className="faq__title-highlight"> about CureVerx</span>
+            {faqHeader.title}{" "}
+            <span className="faq__title-highlight"> {faqHeader.titleHighlight}</span>
           </h2>
           <p className="faq__subtitle">
-            Have questions? We've got answers. If you can't find what you're
-            looking for, feel free to reach out to our support team.
+            {faqHeader.subtitle}
           </p>
         </div>
         {/* FAQ Content Layout */}
@@ -139,12 +108,12 @@ export default function FAQ() {
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
               </div>
-              <h3 className="faq__info-title">Still have questions?</h3>
+              <h3 className="faq__info-title">{faqInfoCard.title}</h3>
               <p className="faq__info-text">
-                Need more help? Our support team is here to help.
+                {faqInfoCard.text}
               </p>
               <a href="#demo" className="faq__info-cta">
-                <span>Get in touch</span>
+                <span>{faqInfoCard.cta}</span>
                 <svg
                   width="16"
                   height="16"

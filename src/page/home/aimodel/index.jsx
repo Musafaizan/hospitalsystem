@@ -1,32 +1,8 @@
 import React from 'react';
 import './style.css';
-
-import aiImage from '../../../assets/ai-section1.png';
+import { aimodelFeatures as features, aimodelHeading as heading, aimodelSubtext as subtext, aimodelVisualImage as visualImage, aimodelFloatingBadges as floatingBadges } from '../../../data/data';
 
 const AIModelSection = () => {
-  const features = [
-    {
-      title: 'Predictive Diagnostics & Risk Scoring',
-      copy:
-        "Analyze patient history instantly to flag high-risk anomalies, medication contradictions, and early critical care indicators.",
-    },
-    {
-      title: 'Automated Smart Medical Transcriptions',
-      copy:
-        "Doctors speak; our integrated AI documents. Convert voice to text directly into the patient's EMR/EHR file during consultations.",
-    },
-    {
-      title: 'Dynamic Intelligent Bed & Resource Allocation',
-      copy:
-      'AI forecasts ER influxes and automatically optimizes ICU bed, surgery room, and staff schedules to prevent bottlenecks.',
-    },
-    {
-      title: 'Insurance Claims Predictive Analytics',
-      copy:
-        'Reduce claim rejections. The built-in AI audits ICD-10 medical coding instantly before submission to ensure higher approval rates.',
-    },
-  ];
-
   return (
     <section className="ai-section" id="aimodel" data-nav-theme="dark">
       <div className="ai-bg-glow"></div>
@@ -39,12 +15,11 @@ const AIModelSection = () => {
           </span> */}
 
           <h2 className="ai-heading">
-            Smart Healthcare:AI-Driven<span> Clinical Intelligence</span> 
+            {heading[0]}<span>{heading[1]}</span>
           </h2>
 
           <p className="ai-subtext">
-           Built-in clinical AI analyzes patient records, documentations and claims
-            in real time,delivering instant insight for faster,smarter care. 
+            {subtext}
           </p>
 
           <div className="ai-qa-grid">
@@ -65,7 +40,7 @@ const AIModelSection = () => {
 
         <div className="ai-visual">
           <div className="ai-visual-frame">
-            <img src={aiImage} alt="MedAI clinical intelligence interface" />
+            <img src={visualImage} alt="MedAI clinical intelligence interface" />
           </div>
 
           <div className="ai-floating-badge badge-top">
@@ -73,8 +48,8 @@ const AIModelSection = () => {
               <span className="pulse-dot"></span>
             </span>
             <div className="badge-text">
-              <strong>98%</strong>
-              <small>Reporting Accuracy</small>
+              <strong>{floatingBadges[0].value}</strong>
+              <small>{floatingBadges[0].label}</small>
             </div>
           </div>
 
@@ -83,8 +58,8 @@ const AIModelSection = () => {
               <span className="pulse-dot"></span>
             </span>
             <div className="badge-text">
-              <strong>24/7</strong>
-              <small>Operations Monitoring</small>
+              <strong>{floatingBadges[1].value}</strong>
+              <small>{floatingBadges[1].label}</small>
             </div>
           </div>
         </div>

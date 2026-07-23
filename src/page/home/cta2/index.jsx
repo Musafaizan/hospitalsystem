@@ -1,4 +1,5 @@
 import "./style.css";
+import { cta2Content as ctaContent } from '../../../data/data';
 
 export default function CTA2() {
   return (
@@ -6,21 +7,20 @@ export default function CTA2() {
       <div className="cta2__inner">
         <span className="cta2__badge">
           <span className="cta2__badge-dot" />
-          Now onboarding new practices
+          {ctaContent.badge}
         </span>
 
         <h2 className="cta2__title">
-         Let’s map an efficiency plan <span>for your facility's bed count.</span>
+          {ctaContent.title} <span>{ctaContent.titleAccent}</span>
         </h2>
 
         <p className="cta2__desc">
-          Scheduling, records, billing, and care coordination in one place.
-          Set up your workspace in under a day, no IT team required.
+          {ctaContent.description}
         </p>
 
         <div className="cta2__buttons">
           <a href="#demo" className="cta2__btn-primary">
-            Book a live demo
+            {ctaContent.buttonLabel}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />

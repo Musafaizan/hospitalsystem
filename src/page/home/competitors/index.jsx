@@ -1,49 +1,8 @@
 import React from "react";
 import "./style.css";
+import { competitorsFeatures as features, competitorsList as competitors, competitorsSectionHeading as sectionHeading } from '../../../data/data';
 
-const FEATURES = [
-  "Unified AI Clinical Insights",
-  "Integrated Patient Portal",
-  "Full Accounting & Insurance",
-  "Offline-to-Cloud Sync",
-  "Multi-Branch Control",
-];
 
-const COMPETITORS = [
-  {
-    name: "Our HIS Solution",
-    highlight: true,
-    values: [
-      "Yes (Built-in)",
-      "Yes (Free Native)",
-      "Yes (Odoo-Grade)",
-      "Yes (Enterprise)",
-      "Yes (Real-time)",
-    ],
-  },
-  {
-    name: "Legacy HIS Systems",
-    values: [
-      "Add-on Only",
-      "Expensive Add-on",
-      "Basic Billing",
-      "Heavy On-Prem Only",
-      "Complex Setup",
-    ],
-  },
-  {
-    name: "Standalone EMR Apps",
-    values: ["No", "Limited", "No", "Cloud Only", "No"],
-  },
-  {
-    name: "Paper-Based / Manual",
-    values: ["No", "No", "Manual", "No", "No"],
-  },
-];
-
-// Derive a status from the raw text so we can pick the right icon/tone:
-// starts with "Yes" -> full support, plain "No" -> unsupported,
-// anything else (Limited, Add-on Only, Manual, ...) -> partial support.
 function getStatus(value) {
   if (/^yes/i.test(value)) return "yes";
   if (/^no$/i.test(value)) return "no";
@@ -101,13 +60,12 @@ export default function HMSComparisonTable() {
   return (
     <section className="hms-compare-section" id="competitors" data-nav-theme="dark">
       <div className="hms-compare-heading">
-        <span className="hms-compare-eyebrow">Feature Comparison</span>
+        <span className="hms-compare-eyebrow">{sectionHeading.eyebrow}</span>
         <h2>
-          Feature <span>Matrix</span>
+          {sectionHeading.title} <span>{sectionHeading.accent}</span>
         </h2>
         <p>
-          See how our HIS solution stacks up against legacy systems,
-          standalone EMR apps, and paper-based workflows.
+          {sectionHeading.description}
         </p>
       </div>
 
@@ -116,7 +74,7 @@ export default function HMSComparisonTable() {
           <thead>
             <tr>
               <th className="row-label-col">Features</th>
-              {COMPETITORS.map((c) => (
+              {competitors.map((c) => (
                 <th key={c.name} className={c.highlight ? "col-highlight" : ""}>
                   {c.highlight && <span className="best-badge">Best Choice</span>}
                   {c.name}
@@ -125,10 +83,10 @@ export default function HMSComparisonTable() {
             </tr>
           </thead>
           <tbody>
-            {FEATURES.map((feature, rowIdx) => (
+            {features.map((feature, rowIdx) => (
               <tr key={feature}>
                 <td className="row-label">{feature}</td>
-                {COMPETITORS.map((c) => (
+                {competitors.map((c) => (
                   <td
                     key={c.name}
                     className={c.highlight ? "col-highlight" : ""}

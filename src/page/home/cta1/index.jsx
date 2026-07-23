@@ -1,5 +1,5 @@
 import "./style.css";
-import ctaImage from "../../../assets/cta-section.png";
+import { cta1Content as ctaContent } from '../../../data/data';
 
 export default function CTA() {
   return (
@@ -7,13 +7,12 @@ export default function CTA() {
       <div className="cta__inner">
         {/* Left — Text */}
         <div className="cta__text">
-          <span className="cta__badge">✦ Get Started Today</span>
+          <span className="cta__badge">{ctaContent.badge}</span>
           <h2 className="cta__title">
-             Ready to see how it works <span><br />in a real clinical setting?</span>
+            {ctaContent.title} <span><br />{ctaContent.titleAccent}</span>
           </h2>
           <p className="cta__desc">
-            Join 12,000+ healthcare providers who trust CureVerx to manage
-            patients, streamline operations, and deliver exceptional care.
+            {ctaContent.description}
           </p>
           <div className="cta__buttons">
             {/* <a href="#start" className="cta__btn-primary">
@@ -28,17 +27,17 @@ export default function CTA() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-              Take a 10-Minute Virtual Tour 
+              {ctaContent.buttonLabel}
             </a>
           </div>
           <p className="cta__note">
-            ✓ No credit card required · 14-day free trial · Cancel anytime
+            {ctaContent.note}
           </p>
         </div>
 
         {/* Right — Image */}
         <div className="cta__image-wrap">
-          <img src={ctaImage} alt="CureVerx Dashboard" className="cta__image" />
+          <img src={ctaContent.image} alt={ctaContent.alt} className="cta__image" />
         </div>
       </div>
     </section>

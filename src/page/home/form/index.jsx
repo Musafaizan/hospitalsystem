@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
-
-import demoImage from "../../../assets/doctor1-from.png";
-
-const VOLUME_OPTIONS = [
-  "Under 20 beds / <500 patients per month",
-  "20–75 beds / 500–3,000 patients per month",
-  "75–200 beds / 3,000–10,000 patients per month",
-  "200+ beds / 10,000+ patients per month",
-];
+import { volumeOptions, demoContent } from '../../../data/data';
 
 const RECEIVER_EMAIL = "iammusa182@gmail.com";
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/iammusa182@gmail.com";
@@ -88,19 +80,18 @@ export default function RequestDemoSection() {
     <section className="demo-section" id="demo">
       <div className="demo-container">
         <div className="demo-image">
-          <img src={demoImage} alt="CureVerx platform preview" />
+          <img src={demoContent.image} alt={demoContent.alt} />
         </div>
 
         <div className="demo-form-wrap">
          
 
           <h2 className="demo-heading">
-            Request a Personalized Demo &amp;<span> System Breakdown</span>
+            {demoContent.heading}&amp;<span> {demoContent.headingAccent}</span>
           </h2>
 
           <p className="demo-subtext">
-            Tell us about your facility and we'll tailor the walkthrough to
-            the modules that matter for your size and patient volume.
+            {demoContent.subtext}
           </p>
 
           <form className="demo-form" onSubmit={handleSubmit}>
@@ -169,7 +160,7 @@ export default function RequestDemoSection() {
                     <option value="" disabled>
                       Select an option
                     </option>
-                    {VOLUME_OPTIONS.map((opt) => (
+                    {volumeOptions.map((opt) => (
                       <option value={opt} key={opt}>
                         {opt}
                       </option>
@@ -202,8 +193,7 @@ export default function RequestDemoSection() {
 
             {submitted && (
               <p className="demo-success">
-                Thanks — a solutions architect will reach out within one
-                business day to schedule your live preview.
+                {demoContent.successMessage}
               </p>
             )}
           </form>

@@ -1,59 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./style.css";
-
-const testimonials = [
-  {
-    id: 1,
-    quote:
-      "Transitioning our entire clinical workflow seemed daunting, but this system completely unified our departments. Our doctors spend less time clicking and more time treating patients.",
-    boldPart: "Our doctors spend less time clicking and more time treating patients",
-    name: "Dr. Omar Siddiqui",
-    title: "Chief Medical Officer",
-    company: "Liaquat National Hospital, Karachi",
-    initials: "OS",
-  },
-  {
-    id: 2,
-    quote:
-      "The automated billing and insurance claim validation cut our overhead instantly. Revenue leakage dropped to near zero within the first quarter of deployment.",
-    boldPart: "Revenue leakage dropped to near zero within the first quarter of deployment",
-    name: "Farhan Qureshi",
-    title: "Hospital Director & CFO",
-    company: "Doctors Hospital, Lahore",
-    initials: "FQ",
-  },
-  {
-    id: 3,
-    quote:
-      "Our billing errors dropped almost overnight. CureVerx keeps insurance claims, invoices, and pharmacy charges in one place, so nothing falls through the cracks.",
-    boldPart: "keeps insurance claims, invoices, and pharmacy charges in one place",
-    name: "Sana Farooq",
-    title: "Finance Director",
-    company: "Al-Noor Medical Complex, Islamabad",
-    initials: "SF",
-  },
-  {
-    id: 4,
-    quote:
-      "Doctors can now pull up a patient's full history, labs, and prescriptions from any department. It's made handovers between shifts genuinely safer.",
-    boldPart: "made handovers between shifts genuinely safer",
-    name: "Dr. Hassan Iqbal",
-    title: "Head of Emergency Medicine",
-    company: "Fatima Memorial Hospital, Lahore",
-    initials: "HI",
-  },
-  {
-    id: 5,
-    quote:
-      "Rolling out CureVerx across five branches took weeks, not months. Our nursing staff picked it up almost instantly, and reporting to management is finally consistent.",
-    boldPart: "reporting to management is finally consistent",
-    name: "Nadia Sheikh",
-    title: "Director of Nursing Services",
-    company: "City Care Hospitals, Faisalabad",
-    initials: "NS",
-  },
-];
+import { testimonials, testimonialCopy } from '../../../data/data';
 
 const AUTOPLAY_MS = 6000;
 
@@ -138,7 +86,7 @@ export default function CureVerxTestimonials() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        Trusted across hospitals &amp; clinics
+        {testimonialCopy.eyebrow}
       </motion.p>
 
       <motion.h2
@@ -148,7 +96,7 @@ export default function CureVerxTestimonials() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.05 }}
       >
-        Our Clients Love <span className="mc-heading-accent">CureVerx</span>
+        {testimonialCopy.heading} <span className="mc-heading-accent">{testimonialCopy.headingAccent}</span>
       </motion.h2>
 
       <div className="mc-carousel">

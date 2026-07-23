@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Stethoscope, Menu, X } from "lucide-react";
 import "./style.css";
-
-const NAV_LINKS = [
-  { name: "Trust", href: "#trust" },
-  { name: "AI model", href: "#aimodel" },
-  { name: "Features", href: "#features" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Competitors", href: "#competitors" },
-  { name: "FAQ", href: "#faq" },
-];
+import { navLinks, ctaLabel, brandName, brandAccent } from '../../../data/data';
 
 function getNavbarTheme() {
   const navbar = document.querySelector(".mc-navbar");
@@ -68,7 +60,7 @@ export default function Navbar() {
             <Stethoscope size={16} strokeWidth={2.4} />
           </span>
           <span className="mc-navbar__brand-text">
-            Cure<span className="mc-navbar__brand-accent">Verx</span>
+            {brandName}<span className="mc-navbar__brand-accent">{brandAccent}</span>
           </span>
         </a>
 
@@ -76,7 +68,7 @@ export default function Navbar() {
           className={`mc-navbar__links ${isOpen ? "mc-navbar__links--open" : ""}`}
           aria-label="Primary"
         >
-          {NAV_LINKS.map((link) => (
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
@@ -91,12 +83,12 @@ export default function Navbar() {
             className="mc-navbar__cta mc-navbar__cta--mobile"
             onClick={() => setIsOpen(false)}
           >
-            Request a Demo
+            {ctaLabel}
           </a>
         </nav>
 
         <a href="#demo" className="mc-navbar__cta mc-navbar__cta--desktop">
-          Request a Demo
+          {ctaLabel}
         </a>
 
         <button
